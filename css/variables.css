@@ -1,6 +1,6 @@
-/** Variables **/
+/* Variables */
 :root {
-  /** Colors **/
+  /* Colors */
   --bg-color: #faf9f6;
   --text-color: #1a1f22;
   --card-color: #d7cfc4;
@@ -8,9 +8,17 @@
   --color-two: #9cc8ce;
   --button-one: #a14a41;
   --button-two: #3a929e;
-  /** Fonts **/
+  /* Fonts */
   --heading-one: "Gravitas One";
   --heading-two: "Playfair Display";
   --paragraph-one: "DM Serif Text";
   --font-one: "Figtree";
+  /* Font sizes */
+  --h-size: 48px;
+  --h-size-two: 24px;
+  --p-size: 16px;
+  /* Box Shadow */
+  /* Border and border radius */
 }
+
+/* Set headings and such under this line */
