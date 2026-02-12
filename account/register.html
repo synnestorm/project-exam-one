@@ -9,9 +9,60 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon//favicon-16x16.png">
     <link rel="manifest" href="../assets/favicon//site.webmanifest">
     <title>Evor - Register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Figtree:ital,wght@0,300..900;1,300..900&family=Gravitas+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/global.css">
 </head>
 
 <body>
+    <header>
+        <h1>Evor</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Shop</a></li>
+                <li><a href="index.html">Electronics</a></li>
+                <li><a href="index.html">Health</a></li>
+                <li><a href="index.html">Footwear</a></li>
+                <li><a href="index.html">Beauty</a></li>
+                <li><a href="index.html">User</a></li>
+                <li><a href="index.html">Cart</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <main>
+        <section id="register">
+            <h1>Register here</h1>
+            <form>
+                <label for="email">E-mail:</label>
+                <input id="email" type="email" name="email" placeholder="olanordmann@mail.no" required>
+                <label for="name">Create username:</label>
+                <input id="name" type="text" name="name" placeholder="Username" required>
+                <label for="password">Create password:</label>
+                <input id="password" type="password" name="password" placeholder="Password" required>
+                <label for="birthday">Birthday (Optional):</label>
+                <input id="birthday" type="date" name="birthday" placeholder="Birthday">
+                <button type="submit">Create Account</button>
+            </form>
+        </section>
+        <p>By creating an account, you can track your orders, save your details for faster checkout, and manage returns
+            easily.</p>
+    </main>
+
+    <footer>
+        <img src="assets/images/logo-evor.png">
+        <ul>
+            <li><a href="index.html">About us</a></li>
+            <li><a href="pages/info/terms.html">Terms & Conditions</a></li>
+            <li><a href="pages/info/privacy.html">Privacy & Policy</a></li>
+            <li><a href="index.html">Contact us</a></li>
+        </ul>
+
+    </footer>
 
 </body>
 
