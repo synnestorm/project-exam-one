@@ -9,9 +9,81 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon//favicon-16x16.png">
     <link rel="manifest" href="../assets/favicon//site.webmanifest">
     <title>Evor - Checkout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Figtree:ital,wght@0,300..900;1,300..900&family=Gravitas+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/global.css">
 </head>
 
 <body>
+    <header>
+        <h1>Evor</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Shop</a></li>
+                <li><a href="index.html">Electronics</a></li>
+                <li><a href="index.html">Health</a></li>
+                <li><a href="index.html">Footwear</a></li>
+                <li><a href="index.html">Beauty</a></li>
+                <li><a href="index.html">User</a></li>
+                <li><a href="index.html">Cart</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <main>
+        <h1>Checkout</h1>
+        <section>
+            <h2>1. Shopping cart</h2>
+            <div id="insideCart" class="cart">
+                <!-- This will show items in the cart -->
+            </div>
+        </section>
+        <section>
+
+            <form id="user-info">
+                <h2>2. Your information</h2>
+                <label for="name">Full name:</label>
+                <input id="name" type="text" name="name" required>
+                <label for="address">Street name and number:</label>
+                <input id="address" type="text" name="address" required>
+                <label for="zip">Zip Code:</label>
+                <input id="zip" type="number" name="zip" required>
+                <label for="city">City:</label>
+                <input id="city" type="text" name="city" required>
+                <label for="country">Country:</label>
+                <input id="country" type="text" name="country" required>
+                <h2>3. Payment methods</h2>
+                <h3>Card:</h3>
+                <label for="card">Card number:</label>
+                <input id="card" type="number" name="card" min="16" placeholder="1234 5678 9101 1121" required>
+                <label for="exp-date">Expiration:</label>
+                <input id="exp-date" type="number" name="exp-date" required>
+                <label for="cvc">CVC:</label>
+                <input id="cvc" type="number" name="cvc" required>
+                <label for="cardname">Name on card:</label>
+                <input id="cardname" type="text" name="cardname" required>
+                <h3>Buy now, Pay later:</h3>
+                <p>Get your items before you pay. Choose this option and enjoy up to 30 days to complete your
+                    payment.</p>
+                <button type="submit">Complete purchase</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <img src="assets/images/logo-evor.png">
+        <ul>
+            <li><a href="index.html">About us</a></li>
+            <li><a href="pages/info/terms.html">Terms & Conditions</a></li>
+            <li><a href="pages/info/privacy.html">Privacy & Policy</a></li>
+            <li><a href="index.html">Contact us</a></li>
+        </ul>
+
+    </footer>
 
 </body>
 
