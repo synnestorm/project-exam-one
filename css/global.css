@@ -5,6 +5,31 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+h1 {
+  font-family: var(--heading-one);
+  font-size: var(--h-size);
+  font-weight: 400;
+}
+
+h2 {
+  font-family: var(--heading-two);
+  font-size: var(--h-size-two);
+}
+
+p {
+  font-family: var(--paragraph-one);
+  font-size: var(--p-size);
+}
+
+.quotes {
+  font-family: var(--font-one);
+}
+
 img {
   width: 100%;
   max-width: 350px;
