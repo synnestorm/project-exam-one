@@ -1,0 +1,25 @@
+/* Styling for index.html only */
+
+section.account {
+  background-color: var(--button-one);
+  color: var(--bg-color);
+  height: 400px;
+  margin: 50px 0px 50px 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+p.text-account {
+  font-size: 30px;
+  width: 700px;
+  font-family: var(--heading-two);
+}
+
+a.account-btn {
+  font-size: 35px;
+  padding: 30px 70px 30px 70px;
+  background-color: var(--card-color);
+}
