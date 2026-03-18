@@ -57,10 +57,14 @@ header {
   max-width: 200px;
 }
 
-li {
+header li {
   display: inline;
+}
+
+li {
   padding: 10px;
   font-size: 20px;
+  list-style: none;
 }
 
 a {
@@ -84,4 +88,23 @@ nav {
   float: right;
 }
 
-/* ul maybe create with linear gradient for the two different background colors? */
+/* footer */
+footer {
+  width: 100%;
+  height: 300px;
+  background-color: var(--color-two);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+footer a {
+  text-decoration: underline;
+}
+
+.logo-bottom {
+  width: 250px;
+}
