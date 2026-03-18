@@ -23,3 +23,23 @@ a.account-btn {
   padding: 30px 70px 30px 70px;
   background-color: var(--card-color);
 }
+
+section.choose-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px 0px 100px 0px;
+  gap: 40px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 35px;
+  font-family: var(--heading-one);
+}
+
+p.text-choose {
+  font-family: var(--heading-two);
+  font-size: 25px;
+  width: 1000px;
+}
