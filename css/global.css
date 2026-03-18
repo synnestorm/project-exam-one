@@ -39,6 +39,7 @@ header {
   position: sticky;
   top: 0;
   width: 100%;
+  padding-top: 20px;
   background: linear-gradient(
     to bottom,
     var(--color-two) 0px,
