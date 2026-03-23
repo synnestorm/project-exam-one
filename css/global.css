@@ -88,6 +88,13 @@ nav {
 
 .fa-solid {
   float: right;
+  font-size: 25px;
+  margin-right: 20px;
+  transition: 0.3s;
+}
+
+.fa-solid:hover {
+  color: var(--button-one);
 }
 
 /* footer */
