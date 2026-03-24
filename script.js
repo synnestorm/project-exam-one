@@ -13,6 +13,7 @@ async function fetchProductGrid() {
     const data = await response.json();
     products = data.data;
     displayCarousel();
+    showSlides(slideIndex);
     displayTrendingNow();
   } catch (error) {
     console.error("Failed to fetch new arrivals", error);
@@ -25,19 +26,41 @@ async function fetchProductGrid() {
 
 function displayCarousel() {
   const carouselContainer = document.querySelector("#carousel-slider");
-  const carouselProducts = products.slice(0, 3);
+  const carouselProducts = products.slice(10, 13);
 
   carouselProducts.forEach((product, index) => {
     const slideDiv = document.createElement("div");
-    slideDiv.className = "mySlides fade";
+    slideDiv.className = "mySlides";
     slideDiv.style.display = index === 0 ? "block" : "none";
-    slideDiv.innerHTML = `<img src="${product.image.url} class="carousel-img">
+    slideDiv.innerHTML = `<img src="${product.image.url}" class="carousel-image fade">
     <div class="carousel-btn">
     <a href="product/index.html?id=${product.id}" class="view-item">View Item</a>
     </div>`;
 
     carouselContainer.appendChild(slideDiv);
   });
+}
+
+let slideIndex = 1;
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  if (slides[slideIndex - 1]) {
+    slides[slideIndex - 1].style.display = "block";
+  }
 }
 
 // displaying the trending now onto page
