@@ -13,6 +13,7 @@ async function fetchProductGrid() {
     const data = await response.json();
     products = data.data;
     displayCarousel();
+    slideAutoPlay();
     showSlides(slideIndex);
     displayTrendingNow();
   } catch (error) {
@@ -61,6 +62,11 @@ function showSlides(n) {
   if (slides[slideIndex - 1]) {
     slides[slideIndex - 1].style.display = "block";
   }
+}
+
+function slideAutoPlay() {
+  plusSlides(1);
+  setTimeout(slideAutoPlay, 5000);
 }
 
 // displaying the trending now onto page
