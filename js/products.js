@@ -23,6 +23,10 @@ async function fetchEveryProduct() {
             (tag) => tag.toLowerCase() === filterCategory.toLowerCase(),
           ),
       );
+      const shopTitle = document.querySelector(".shop-title");
+      if (shopTitle) {
+        shopTitle.textContent = `Shop ${filterCategory}`;
+      }
     }
     displayAllProducts();
   } catch (error) {
