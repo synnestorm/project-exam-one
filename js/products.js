@@ -12,11 +12,23 @@ async function fetchEveryProduct() {
     }
     const data = await response.json();
     products = data.data;
+    const params = new URLSearchParams(window.location.search);
+    const filterCategory = params.get("category");
+    if (filterCategory) {
+      console.log("URL Category found:", filterCategory);
+      products = products.filter(
+        (product) =>
+          product.tags &&
+          product.tags.some(
+            (tag) => tag.toLowerCase() === filterCategory.toLowerCase(),
+          ),
+      );
+    }
     displayAllProducts();
   } catch (error) {
-    console.error("Failed to fetch all products.", error);
+    console.error("Failed to fetch products.", error);
     productList.textContent =
-      "Could not fetch all products. Please try again later.";
+      "Could not fetch products. Please try again later.";
   }
 }
 
