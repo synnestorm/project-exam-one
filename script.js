@@ -1,39 +1,26 @@
-/* fetch("https://v2.api.noroff.dev/online-shop")
-  .then((res) => {
-    console.log("STATUS:", res.status);
-    console.log("OK:", res.ok);
-    return res.json();
-  })
-  .then((data) => {
-    console.log("DATA:", data);
-    console.log("TOP-LEVEL KEYS:", Object.keys(data));
-    data.data.forEach((product) => {
-      console.log(product.title);
-      console.log(product.image.url);
-    });
-  })
-  .catch((error) => {
-    console.error("FETCH ERROR:", error);
-  }); */
+// fetching for product grid, showing 12 products that is "trending now"
 
-fetch("https://v2.api.noroff.dev/online-shop")
-  .then((res) => res.json())
-  .then((data) => {
-    const container = document.getElementById("product-list");
+const productGrid = document.querySelector("product-grid");
+const apiUrl = "https://v2.api.noroff.dev/online-shop";
+let products = [];
 
-    data.data.forEach((product) => {
-      const card = document.createElement("div");
+async function fetchProductGrid() {
+  try {
+    const response = await fetch(apiUrl);
+    if (!response.ok) {
+      throw new Error(`Error! Status: ${response.status}`);
+    }
+    const data = await response.json();
+    products = data.data;
+    // call function displaying the fetched products
+  } catch (error) {
+    console.error("Failed to fetch new arrivals", error);
+    productGrid.textContent =
+      "Could not fetch products trending now. Please try again later.";
+  }
+}
 
-      card.innerHTML = `
-        <img src="${product.image.url}" alt="${product.image.alt}">
-        <h2>${product.title}</h2>
-        <h3>${product.price}</h3>
-        <p>${product.description}</p>
-      `;
+const response = await fetch(apiUrl);
+console.log(response.status, response.ok);
 
-      container.appendChild(card);
-    });
-  })
-  .catch((error) => {
-    console.error("FETCH ERROR:", error);
-  });
+//     console.log(response.status, response.ok); <--- to check the response code
