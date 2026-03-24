@@ -16,6 +16,8 @@ h1 {
   font-family: var(--heading-one);
   font-size: var(--h-size);
   font-weight: 400;
+  text-align: center;
+  margin-top: 20px;
 }
 
 h2 {
