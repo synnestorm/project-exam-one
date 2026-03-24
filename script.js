@@ -27,7 +27,7 @@ function displayTrendingNow() {
     productGrid.textContent = "No trending products to show.";
     return;
   }
-  const trendingNow = products.slice(0, 12);
+  const trendingNow = products.slice(2, 14);
   productGrid.innerHTML = "";
   trendingNow.forEach((product) => {
     const trendingDiv = document.createElement("div");
@@ -39,13 +39,20 @@ function displayTrendingNow() {
     image.className = "trending-image";
     image.src = product.image.url;
     image.alt = product.title;
+    const trendingInfo = document.createElement("div");
+    trendingInfo.className = "trending-info";
+    const title = document.createElement("p");
+    title.className = "trending-title";
+    title.textContent = `${product.title}`;
     const price = document.createElement("span");
     price.className = "trending-price";
     price.textContent = `${product.price} NOK`;
 
+    trendingInfo.appendChild(title);
+    trendingInfo.appendChild(price);
     link.appendChild(image);
     trendingDiv.appendChild(link);
-    trendingDiv.appendChild(price);
+    trendingDiv.appendChild(trendingInfo);
     productGrid.appendChild(trendingDiv);
   });
 }
