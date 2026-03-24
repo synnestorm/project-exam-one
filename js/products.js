@@ -33,7 +33,7 @@ function displayAllProducts() {
     productDiv.className = "product-div";
     const link = document.createElement("a");
     link.className = "product-link";
-    link.href = `product/index.html?id=${product.id}`;
+    link.href = `../product/index.html?id=${product.id}`;
     const image = document.createElement("img");
     image.className = "product-image";
     image.src = product.image.url;
