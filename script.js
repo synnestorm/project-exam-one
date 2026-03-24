@@ -1,6 +1,6 @@
 // fetching for product grid, showing 12 products that is "trending now"
 
-const productGrid = document.querySelector("product-grid");
+const productGrid = document.querySelector("#product-grid");
 const apiUrl = "https://v2.api.noroff.dev/online-shop";
 let products = [];
 
@@ -12,7 +12,7 @@ async function fetchProductGrid() {
     }
     const data = await response.json();
     products = data.data;
-    // call function displaying the fetched products
+    displayTrendingNow();
   } catch (error) {
     console.error("Failed to fetch new arrivals", error);
     productGrid.textContent =
@@ -20,7 +20,34 @@ async function fetchProductGrid() {
   }
 }
 
-const response = await fetch(apiUrl);
-console.log(response.status, response.ok);
+// displaying the trending now onto page
 
-//     console.log(response.status, response.ok); <--- to check the response code
+function displayTrendingNow() {
+  if (!products || products.length === 0) {
+    productGrid.textContent = "No trending products to show.";
+    return;
+  }
+  const trendingNow = products.slice(0, 12);
+  productGrid.innerHTML = "";
+  trendingNow.forEach((product) => {
+    const trendingDiv = document.createElement("div");
+    trendingDiv.className = "trending-products";
+    const link = document.createElement("a");
+    link.className = "trending-link";
+    link.href = `product/index.html?id=${product.id}`;
+    const image = document.createElement("img");
+    image.className = "trending-image";
+    image.src = product.image.url;
+    image.alt = product.title;
+    const price = document.createElement("span");
+    price.className = "trending-price";
+    price.textContent = `${product.price} NOK`;
+
+    link.appendChild(image);
+    trendingDiv.appendChild(link);
+    trendingDiv.appendChild(price);
+    productGrid.appendChild(trendingDiv);
+  });
+}
+
+fetchProductGrid();
