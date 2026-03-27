@@ -1,0 +1,48 @@
+/* Stylesheet for login.html and register.html */
+#login,
+#register,
+.container {
+  background-color: var(--card-color);
+  width: 1000px;
+  height: 700px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+h1 {
+  padding-top: 30px;
+}
+
+input,
+textarea {
+  display: block;
+  width: 300px;
+  padding: 20px;
+  border: none;
+  background-color: var(--bg-color);
+  margin: 20px auto;
+}
+
+label {
+  display: none;
+}
+
+button {
+  font-size: 20px;
+  font-family: var(--font-one);
+  padding: 10px 50px 10px 50px;
+  background-color: var(--button-one);
+  border: none;
+  color: var(--bg-color);
+  display: block;
+  margin: auto;
+  cursor: pointer;
+}
+
+a.register {
+  text-decoration: underline;
+}
+
+h2 {
+  margin-top: 50px;
+}
