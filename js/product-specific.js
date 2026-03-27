@@ -18,8 +18,8 @@ async function fetchProduct() {
     }
     const data = await response.json();
     const product = data.data;
-    const productDiv = document.createElement("div");
-    productDiv.className = "product-div";
+    const specificProduct = document.createElement("div");
+    specificProduct.className = "specific-product";
     const image = document.createElement("img");
     image.className = "product-image";
     image.src = product.image.url;
@@ -37,12 +37,12 @@ async function fetchProduct() {
     addCart.className = "add-cart";
     addCart.textContent = "Add to cart";
 
-    productDiv.appendChild(image);
-    productDiv.appendChild(title);
-    productDiv.appendChild(price);
-    productDiv.appendChild(description);
-    productDiv.appendChild(addCart);
-    productCard.appendChild(productDiv);
+    specificProduct.appendChild(image);
+    specificProduct.appendChild(title);
+    specificProduct.appendChild(price);
+    specificProduct.appendChild(description);
+    specificProduct.appendChild(addCart);
+    productCard.appendChild(specificProduct);
   } catch (error) {
     console.error("Failed to fetch product", error);
     productCard.textContent = "Failed to load product. Please try again later.";
