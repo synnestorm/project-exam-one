@@ -66,7 +66,7 @@ function showSlides(n) {
 
 function slideAutoPlay() {
   plusSlides(1);
-  setTimeout(slideAutoPlay, 5000);
+  setTimeout(slideAutoPlay, 8000);
 }
 
 // displaying the trending now onto page
