@@ -21,27 +21,31 @@ async function fetchProduct() {
     const specificProduct = document.createElement("div");
     specificProduct.className = "specific-product";
     const image = document.createElement("img");
-    image.className = "product-image";
+    image.className = "specific-image";
     image.src = product.image.url;
     image.alt = product.image.alt;
-    const title = document.createElement("h2");
-    title.className = "product-title";
+    const title = document.createElement("h1");
+    title.className = "specific-title";
     title.textContent = product.title;
     const price = document.createElement("span");
-    price.className = "product-price";
-    price.textContent = `${product.price}`;
+    price.className = "specific-price";
+    price.textContent = `${product.price} NOK`;
     const description = document.createElement("p");
-    description.className = "product-description";
+    description.className = "specific-description";
     description.textContent = product.description;
     const addCart = document.createElement("button");
     addCart.className = "add-cart";
     addCart.textContent = "Add to cart";
+    const specificContent = document.createElement("div");
+    specificContent.className = "specific-content";
+
+    specificContent.appendChild(title);
+    specificContent.appendChild(price);
+    specificContent.appendChild(description);
+    specificContent.appendChild(addCart);
 
     specificProduct.appendChild(image);
-    specificProduct.appendChild(title);
-    specificProduct.appendChild(price);
-    specificProduct.appendChild(description);
-    specificProduct.appendChild(addCart);
+    specificProduct.appendChild(specificContent);
     productCard.appendChild(specificProduct);
   } catch (error) {
     console.error("Failed to fetch product", error);
