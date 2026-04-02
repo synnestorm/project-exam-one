@@ -65,7 +65,9 @@ async function fetchProduct() {
       const url = `${window.location.origin}/product?productId=${product.id}`
       navigator.clipboard.writeText(url)
       .then (() => {
+        // later fix: textContent appears underneath icon with the copied message
         console.log("copied!")
+        // also add setTimeOut for it to disappear after some time
       })
       .catch(err => {
         console.error("Failed to copy!", err)
