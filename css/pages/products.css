@@ -101,6 +101,23 @@ h2 {
   font-family: var(--font-one);
 }
 
+.add-cart {
+  background-color: var(--button-one);
+  color: var(--bg-color);
+  border: none;
+  width: 100%;
+  max-width: 150px;
+  font-family: var(--font-one);
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.add-cart.active {
+  background-color: var(--color-one);
+  color: var(--text-color);
+}
+
 .specific-content {
   max-width: 400px;
   display: flex;
@@ -110,6 +127,10 @@ h2 {
 
 .fa-share {
   cursor: pointer;
+  font-size: 25px;
+  position: relative;
+  bottom: 55px;
+  left: 200px;
 }
 
 #reviews {

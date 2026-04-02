@@ -77,11 +77,12 @@ async function fetchProduct() {
         })
       }
       localStorage.setItem("cart", JSON.stringify(cart))
-      const buttonText = addCart.textContent
-      addCart.textContent = "Added to cart!"
+      addCart.classList.add("active")
+      addCart.textContent = "✔ Added!"
       addCart.disabled = true
       setTimeout(() => {
-        addCart.textContent = buttonText
+        addCart.classList.remove("active")
+        addCart.textContent = "Add to cart"
         addCart.disabled = false
       }, 3000)
     })
