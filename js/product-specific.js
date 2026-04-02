@@ -58,10 +58,33 @@ async function fetchProduct() {
     description.textContent = product.description;
     // fix so that there is space after comma
     const tags = document.createElement("p")
-    tags.textContent = `tags: ${product.tags}`
+    tags.textContent = `tags: ${product.tags.join(", ")}`
     const addCart = document.createElement("button");
     addCart.className = "add-cart";
     addCart.textContent = "Add to cart";
+    addCart.addEventListener("click", () => {
+      let cart = JSON.parse(localStorage.getItem("cart")) || []
+      const existingProductIndex = cart.findIndex(item => item.id === product.id)
+      if (existingProductIndex !== -1) {
+        cart[existingProductIndex].quantity += 1
+      } else {
+        cart.push({
+            id: product.id,
+            title: product.title,
+            price: product.price,
+            image: product.image.url,
+            quantity: 1
+        })
+      }
+      localStorage.setItem("cart", JSON.stringify(cart))
+      const buttonText = addCart.textContent
+      addCart.textContent = "Added to cart!"
+      addCart.disabled = true
+      setTimeout(() => {
+        addCart.textContent = buttonText
+        addCart.disabled = false
+      }, 3000)
+    })
     const share = document.createElement("i")
     share.className = "fas fa-share"
     share.addEventListener("click", () => {
@@ -116,7 +139,6 @@ async function fetchProduct() {
         userReview.appendChild(reviewText)
         reviewsDiv.appendChild(userReview)
       })
-      reviews.appendChild(reviewsDiv)
     }
     
   } catch (error) {
