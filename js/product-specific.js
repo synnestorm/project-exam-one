@@ -27,6 +27,20 @@ async function fetchProduct() {
     const title = document.createElement("h1");
     title.className = "specific-title";
     title.textContent = product.title;
+    const rating = document.createElement("div")
+    rating.className = "specific-rating"
+    rating.textContent = ""
+    for (let i = 1; i <= 5; i++) {
+      const star = document.createElement("i")
+      if (product.rating >= i) {
+        star.className = "fas fa-star"
+      } else if (product.rating >= i - 0.5) {
+        star.className = "fas fa-star-half-alt"
+      } else {
+        star.className = "far fa-star"
+      }
+      rating.appendChild(star)
+    }
     const price = document.createElement("span");
     price.className = "original-price";
     const discountPrice = document.createElement("span")
@@ -48,6 +62,7 @@ async function fetchProduct() {
     specificContent.className = "specific-content";
 
     specificContent.appendChild(title);
+    specificContent.appendChild(rating)
     specificContent.appendChild(price);
     specificContent.appendChild(description);
     specificContent.appendChild(addCart);

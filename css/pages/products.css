@@ -70,6 +70,10 @@
   text-align: start;
 }
 
+.specific-rating i {
+  margin-right: 5px;
+}
+
 .original-price {
   display: block;
   font-size: 40px;
