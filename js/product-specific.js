@@ -58,6 +58,19 @@ async function fetchProduct() {
     const addCart = document.createElement("button");
     addCart.className = "add-cart";
     addCart.textContent = "Add to cart";
+    const share = document.createElement("i")
+    share.className = "fas fa-share"
+    share.style.cursor = "pointer"
+    share.addEventListener("click", () => {
+      const url = `${window.location.origin}/product?productId=${product.id}`
+      navigator.clipboard.writeText(url)
+      .then (() => {
+        console.log("copied!")
+      })
+      .catch(err => {
+        console.error("Failed to copy!", err)
+      })
+    })
     const specificContent = document.createElement("div");
     specificContent.className = "specific-content";
 
@@ -66,6 +79,7 @@ async function fetchProduct() {
     specificContent.appendChild(price);
     specificContent.appendChild(description);
     specificContent.appendChild(addCart);
+    specificContent.appendChild(share)
 
     specificProduct.appendChild(image);
     specificProduct.appendChild(specificContent);
