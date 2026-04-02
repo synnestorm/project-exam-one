@@ -2,6 +2,7 @@
 // by user
 
 const productCard = document.querySelector("#product-card");
+const reviews = document.querySelector("#reviews")
 const apiUrl = "https://v2.api.noroff.dev/online-shop";
 
 async function fetchProduct() {
@@ -55,12 +56,14 @@ async function fetchProduct() {
     const description = document.createElement("p");
     description.className = "specific-description";
     description.textContent = product.description;
+    // fix so that there is space after comma
+    const tags = document.createElement("p")
+    tags.textContent = `tags: ${product.tags}`
     const addCart = document.createElement("button");
     addCart.className = "add-cart";
     addCart.textContent = "Add to cart";
     const share = document.createElement("i")
     share.className = "fas fa-share"
-    share.style.cursor = "pointer"
     share.addEventListener("click", () => {
       const url = `${window.location.origin}/product?productId=${product.id}`
       navigator.clipboard.writeText(url)
@@ -80,12 +83,42 @@ async function fetchProduct() {
     specificContent.appendChild(rating)
     specificContent.appendChild(price);
     specificContent.appendChild(description);
+    specificContent.appendChild(tags)
     specificContent.appendChild(addCart);
     specificContent.appendChild(share)
 
     specificProduct.appendChild(image);
     specificProduct.appendChild(specificContent);
     productCard.appendChild(specificProduct);
+
+    // reviews fetched outside the product card
+
+    const reviewsDiv = document.createElement("div")
+    reviewsDiv.className = "specific-reviews"
+    reviews.appendChild(reviewsDiv)
+    if (product.reviews.length === 0) {
+      reviewsDiv.innerHTML = `
+      <h2>Reviews:</h2>
+      <p>No reviews yet</p>`
+    } else {
+      const reviewHeader = document.createElement("h2")
+      reviewHeader.textContent = "Reviews:"
+      reviewsDiv.appendChild(reviewHeader)
+      product.reviews.forEach(review => {
+        const userReview = document.createElement("div")
+        userReview.className = "review"
+        const user = document.createElement("p")
+        user.textContent = review.username + " "
+        const reviewText = document.createElement("p")
+        reviewText.textContent = review.description
+
+        userReview.appendChild(user)
+        userReview.appendChild(reviewText)
+        reviewsDiv.appendChild(userReview)
+      })
+      reviews.appendChild(reviewsDiv)
+    }
+    
   } catch (error) {
     console.error("Failed to fetch product", error);
     productCard.textContent = "Failed to load product. Please try again later.";
