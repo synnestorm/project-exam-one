@@ -70,10 +70,18 @@
   text-align: start;
 }
 
-.specific-price {
+.original-price {
+  display: block;
   font-size: 40px;
   font-family: var(--font-one);
   font-weight: bold;
+}
+
+.discounted-price {
+  font-size: 40px;
+  font-family: var(--font-one);
+  font-weight: bold;
+  color: var(--button-one);
 }
 
 .specific-description {

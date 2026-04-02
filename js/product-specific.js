@@ -28,8 +28,16 @@ async function fetchProduct() {
     title.className = "specific-title";
     title.textContent = product.title;
     const price = document.createElement("span");
-    price.className = "specific-price";
-    price.textContent = `${product.price} NOK`;
+    price.className = "original-price";
+    const discountPrice = document.createElement("span")
+    discountPrice.className = "discounted-price"
+    if (product.discountedPrice < product.price) {
+      price.innerHTML = `
+      <span class="original-price">${product.price} NOK</span>
+      <span class="discounted-price">NOW ${product.discountedPrice}!</span>`
+    } else {
+      price.textContent = `${product.price} NOK`;
+    }
     const description = document.createElement("p");
     description.className = "specific-description";
     description.textContent = product.description;
