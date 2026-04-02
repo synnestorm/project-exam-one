@@ -77,6 +77,10 @@
   font-weight: bold;
 }
 
+.old-price {
+  text-decoration: line-through;
+}
+
 .discounted-price {
   font-size: 40px;
   font-family: var(--font-one);

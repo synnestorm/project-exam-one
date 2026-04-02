@@ -33,8 +33,8 @@ async function fetchProduct() {
     discountPrice.className = "discounted-price"
     if (product.discountedPrice < product.price) {
       price.innerHTML = `
-      <span class="original-price">${product.price} NOK</span>
-      <span class="discounted-price">NOW ${product.discountedPrice}!</span>`
+      <span class="original-price old-price">${product.price} NOK</span>
+      <span class="discounted-price">now ${product.discountedPrice}!</span>`
     } else {
       price.textContent = `${product.price} NOK`;
     }
