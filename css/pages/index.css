@@ -152,7 +152,9 @@ section.choose-us {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 100px 0px 100px 0px;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
   gap: 40px;
 }
 
@@ -169,11 +171,43 @@ h2 {
 p.text-choose {
   font-family: var(--heading-two);
   font-size: 25px;
-  width: 1000px;
+  padding: 30px;
 }
 
 img.image-collage {
   max-width: 900px;
   display: block;
   margin: 50px auto 30px auto;
+}
+
+@media only screen and (max-width: 500px) {
+  #carousel-slider {
+    max-width: 500px;
+    height: 400px;
+  }
+  .carousel-image {
+    height: 400px;
+  }
+  a.view-item {
+    font-size: 25px;
+  padding: 20px 50px 20px 50px;
+  }
+  h1 {
+    margin-top: 50px;
+  }
+  h2 {
+    font-size: 25px;
+  }
+  img.image-collage {
+    display: none;
+  }
+  h2.inspired {
+    display: none;
+  }
+  section.account,
+  section.choose-us {
+    height: auto;
+    padding: 30px;
+    gap: 50px;
+  }
 }

@@ -3,7 +3,8 @@
 #register,
 .container {
   background-color: var(--card-color);
-  width: 1000px;
+  width: 100%;
+  max-width: 1000px;
   height: 700px;
   margin: 50px auto;
   text-align: center;
