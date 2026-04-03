@@ -35,10 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
         itemDisplay.appendChild(image)
         itemDisplay.appendChild(title)
         itemDisplay.appendChild(quantity)
-        itemDisplay.appendChild(size)
         itemDisplay.appendChild(price)
 
-        cartItems.appendChild(itemDisplay)
+        insideCart.appendChild(itemDisplay)
     })
 
     totalPrice.textContent = `${total.toFixed(2)} NOK`
