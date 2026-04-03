@@ -19,7 +19,6 @@
     <script src="https://kit.fontawesome.com/3c3001c8de.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/variables.css">
     <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/pages/user.css">
     <link rel="stylesheet" href="../css/pages/order-process.css">
 </head>
 
@@ -42,47 +41,48 @@
     </header>
     <main>
         <h1>Checkout</h1>
-        <section class="checkout">
-        
-        <section>
+        <div class="checkout-container">
+            <section class="cart">
             <h2>1. Shopping cart</h2>
-            <div id="insideCart" class="cart">
+            <div id="insideCart">
                 <!-- This will show items in the cart -->
             </div>
         </section>
-        <section class="user-info">
-
-            <form id="user-info-form">
-                <h2>2. Your information</h2>
+            <form id="checkout-form">
+                <fieldset>
+                <legend>2. Your information</legend>
                 <label for="name">Full name:</label>
                 <input id="name" type="text" name="name" required>
                 <label for="address">Street name and number:</label>
                 <input id="address" type="text" name="address" required>
                 <label for="zip">Zip Code:</label>
-                <input id="zip" type="number" name="zip" required>
+                <input id="zip" type="text" inputmode="numeric" name="zip" required>
                 <label for="city">City:</label>
                 <input id="city" type="text" name="city" required>
                 <label for="country">Country:</label>
                 <input id="country" type="text" name="country" required>
-                <section class="payment-method">
-                <h2>3. Payment methods</h2>
-                <h3>Card:</h3>
-                <label for="card">Card number:</label>
-                <input id="card" type="number" name="card" min="16" placeholder="1234 5678 9101 1121" required>
-                <label for="exp-date">Expiration:</label>
-                <input id="exp-date" type="number" name="exp-date" required>
-                <label for="cvc">CVC:</label>
-                <input id="cvc" type="number" name="cvc" required>
-                <label for="cardname">Name on card:</label>
-                <input id="cardname" type="text" name="cardname" required>
-                <h3>Buy now, Pay later:</h3>
+                </fieldset>
+                <fieldset>
+                <legend>3. Payment methods</legend>
+                <label><input type="radio" name="payment" value="card" checked>Card</label>
+                <label><input type="radio" name="payment" value="later">Buy now, pay later</label>
                 <p>Get your items before you pay. Choose this option and enjoy up to 30 days to complete your
                     payment.</p>
+                <div class="payment-card">
+                <label for="card">Card number:</label>
+                <input id="card" type="text" name="card" inputmode="numeric" placeholder="1234 5678 9101 1121" autocomplete="cc-number" minlength="16"
+    maxlength="19" required>
+                <label for="exp-date">Expiration:</label>
+                <input id="exp-date" type="text" name="exp-date" autocomplete="cc-exp" required>
+                <label for="cvc">CVC:</label>
+                <input id="cvc" type="text" name="cvc" autocomplete="cc-csc" minlength="3" maxlength="4" required>
+                <label for="cardname">Name on card:</label>
+                <input id="cardname" type="text" name="cardname" autocomplete="cc-name" required>
+            </div>
+            </fieldset>
                 <button type="submit">Complete purchase</button>
             </form>
-       </section> 
-    </section>
-    </section>
+    </div>
     </main>
 
     <footer>
