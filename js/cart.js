@@ -57,6 +57,14 @@ function shoppingCart() {
         plus.className = "quantity-btn"
         plus.textContent = "+"
 
+        quantityAdjuster.appendChild(minus)
+        quantityAdjuster.appendChild(quantityNumber)
+        quantityAdjuster.appendChild(plus)
+        displayProducts.appendChild(quantityAdjuster)
+
+        const minQuantity = 1
+        const maxQuantity = 10
+
         displayProducts.appendChild(image)
         displayProducts.appendChild(title)
         displayProducts.appendChild(price)
