@@ -19,6 +19,8 @@
     <script src="https://kit.fontawesome.com/3c3001c8de.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/variables.css">
     <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/pages/user.css">
+    <link rel="stylesheet" href="../css/pages/order-process.css">
 </head>
 
 <body>
@@ -40,15 +42,17 @@
     </header>
     <main>
         <h1>Checkout</h1>
+        <section class="checkout">
+        
         <section>
             <h2>1. Shopping cart</h2>
             <div id="insideCart" class="cart">
                 <!-- This will show items in the cart -->
             </div>
         </section>
-        <section>
+        <section class="user-info">
 
-            <form id="user-info">
+            <form id="user-info-form">
                 <h2>2. Your information</h2>
                 <label for="name">Full name:</label>
                 <input id="name" type="text" name="name" required>
@@ -60,6 +64,7 @@
                 <input id="city" type="text" name="city" required>
                 <label for="country">Country:</label>
                 <input id="country" type="text" name="country" required>
+                <section class="payment-method">
                 <h2>3. Payment methods</h2>
                 <h3>Card:</h3>
                 <label for="card">Card number:</label>
@@ -75,7 +80,9 @@
                     payment.</p>
                 <button type="submit">Complete purchase</button>
             </form>
-        </section>
+       </section> 
+    </section>
+    </section>
     </main>
 
     <footer>
