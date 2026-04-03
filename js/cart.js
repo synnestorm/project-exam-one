@@ -65,6 +65,14 @@ function shoppingCart() {
         const minQuantity = 1
         const maxQuantity = 10
 
+        minus.addEventListener("click", () => {
+            if (item.quantity > minQuantity) {
+                item.quantity--
+                localStorage.setItem("cart", JSON.stringify(cart))
+                shoppingCart()
+            }
+        })
+
         displayProducts.appendChild(image)
         displayProducts.appendChild(title)
         displayProducts.appendChild(price)
