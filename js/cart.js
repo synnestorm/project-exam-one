@@ -19,9 +19,10 @@ function shoppingCart() {
         return
     }
     let total = 0
-    cart.forEach((item, index) => {
-        if (!item || !item.price || !item.quantity) return;
-        total += item.price * item.quantity;
+    cart.forEach((item) => {
+        if (!item || (!item.price && item.discountedPrice) || !item.quantity) return;
+        const finalPrice = item.discountedPrice ?? item.price;
+        total += finalPrice * item.quantity;
         const displayProducts = document.createElement("div")
         displayProducts.className = "display-products"
         const image = document.createElement("img")
@@ -33,7 +34,11 @@ function shoppingCart() {
         title.textContent = item.title
         const price = document.createElement("span")
         price.className = "product-price"
-        price.textContent = `${item.price} NOK`
+        if(item.discountedPrice) {
+            price.textContent = `${item.discountedPrice} NOK`
+        } else {
+            price.textContent = `${item.price} NOK`;
+        }
         const removeBtn = document.createElement("button")
         removeBtn.className = "remove-btn"
         removeBtn.textContent = "Remove product"
