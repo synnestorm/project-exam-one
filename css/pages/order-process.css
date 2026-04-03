@@ -99,3 +99,27 @@ button {
   margin: auto;
   cursor: pointer;
 }
+
+/* styling for success/index.html */
+
+main.success {
+    background-color: var(--card-color);
+  width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+}
+
+h2.order {
+    text-decoration: none;
+}
+
+h2.continue {
+    text-align: start;
+    margin-top: 30px;
+    text-decoration: none;
+}
+
+h2 a {
+    text-decoration: underline;
+    margin-top: 20px;
+}
