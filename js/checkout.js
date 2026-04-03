@@ -1,7 +1,6 @@
 // this will get the information from cart, needs to go through thouroughly
 document.addEventListener("DOMContentLoaded", () => {
     const insideCart = document.getElementById("insideCart")
-    const totalPrice = document.getElementById("total-price")
 
     let cart = []
     try {
@@ -14,8 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let total = 0
 
     cart.forEach(item => {
-        const itemTotal = item.price * item.quantity
-        total += itemTotal
+        if (!item || (!item.price && item.discountedPrice) || !item.quantity) return;
+        const finalPrice = item.discountedPrice ?? item.price;
+        total += finalPrice * item.quantity;
         const itemDisplay = document.createElement("div")
         itemDisplay.className = "item-display"
         const image = document.createElement("img")
@@ -30,7 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
         quantity.textContent = `Quantity: ${item.quantity}`
         const price = document.createElement("span")
         price.className = "product-price"
-        price.textContent = `Price: ${item.price} NOK`
+        if(item.discountedPrice) {
+            price.textContent = `${item.discountedPrice} NOK`
+        } else {
+            price.textContent = `${item.price} NOK`;
+        }
 
         itemDisplay.appendChild(image)
         itemDisplay.appendChild(title)
@@ -39,9 +43,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         insideCart.appendChild(itemDisplay)
     })
-
-    totalPrice.textContent = `${total.toFixed(2)} NOK`
-
+    const totalPrice = document.createElement("span")
+    totalPrice.className = "total-price"
+    totalPrice.textContent = `Total: ${total.toFixed(2)} NOK`
+    insideCart.appendChild(totalPrice)
     const purchaseBtn = document.querySelector(".complete-btn")
     purchaseBtn.addEventListener("click", (e) => {
         e.preventDefault()
