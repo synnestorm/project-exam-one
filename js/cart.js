@@ -44,6 +44,19 @@ function shoppingCart() {
         removeBtn.textContent = "Remove product"
         removeBtn.addEventListener("click", () => removeFromCart(item.id))
 
+        //this is the quantity adjuster
+        const quantityAdjuster = document.createElement("div")
+        quantityAdjuster.className = "quantity-adjuster"
+        const minus = document.createElement("button")
+        minus.className = "quantity-btn"
+        minus.textContent = "-"
+        const quantityNumber = document.createElement("span")
+        quantityNumber.textContent = item.quantity
+        quantityNumber.className = "quantity-number"
+        const plus = document.createElement("button")
+        plus.className = "quantity-btn"
+        plus.textContent = "+"
+
         displayProducts.appendChild(image)
         displayProducts.appendChild(title)
         displayProducts.appendChild(price)
