@@ -72,6 +72,7 @@ async function fetchProduct() {
             id: product.id,
             title: product.title,
             price: product.price,
+            discountedPrice: product.discountedPrice,
             image: product.image.url,
             quantity: 1
         })
