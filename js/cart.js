@@ -73,6 +73,14 @@ function shoppingCart() {
             }
         })
 
+        plus.addEventListener("click", () => {
+            if (item.quantity < maxQuantity) {
+                item.quantity++
+                localStorage.setItem("cart", JSON.stringify(cart))
+                shoppingCart()
+            }
+        })
+
         displayProducts.appendChild(image)
         displayProducts.appendChild(title)
         displayProducts.appendChild(price)
