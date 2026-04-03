@@ -43,6 +43,7 @@ function shoppingCart() {
         removeBtn.className = "remove-btn"
         removeBtn.textContent = "Remove product"
         removeBtn.addEventListener("click", () => removeFromCart(item.id))
+
         displayProducts.appendChild(image)
         displayProducts.appendChild(title)
         displayProducts.appendChild(price)
@@ -53,17 +54,33 @@ function shoppingCart() {
     totalPrice.className = "total-price"
     totalPrice.textContent = `Total price: ${total.toFixed(2)} NOK`
     containerCart.appendChild(totalPrice)
+    const removeAllBtn = document.createElement("button")
+    removeAllBtn.className = "remove-all"
+    removeAllBtn.textContent = "Remove all products"
+    removeAllBtn.addEventListener("click", () => {
+        if (confirm("Are you sure you want to remove all products?")) {
+            clearCart()  
+            } 
+        })
+    containerCart.appendChild(removeAllBtn)
     const continueBtn = document.createElement("button")
     continueBtn.className = "continue-btn"
     continueBtn.textContent = "Continue to checkout"
     continueBtn.addEventListener("click", () => {
         window.location.href = "../checkout/index.html"
         })
+    
     containerCart.appendChild(continueBtn)
 }
 
 function removeFromCart(productId) {
     cart = cart.filter(item => !(item.id === productId))
+    localStorage.setItem("cart", JSON.stringify(cart))
+    shoppingCart()
+}
+
+function clearCart() {
+    cart = []
     localStorage.setItem("cart", JSON.stringify(cart))
     shoppingCart()
 }
