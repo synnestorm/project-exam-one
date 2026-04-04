@@ -30,11 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
         quantity.textContent = `Quantity: ${item.quantity}`
         const price = document.createElement("span")
         price.className = "product-price"
-        if(item.discountedPrice) {
-            price.textContent = `${item.discountedPrice} NOK`
-        } else {
-            price.textContent = `${item.price} NOK`;
-        }
+        const itemPrice = item.discountedPrice ?? item.price
+        const itemTotal = itemPrice * item.quantity
+        price.textContent = `${itemTotal.toFixed(2)} NOK`
 
         itemDisplay.appendChild(image)
         itemDisplay.appendChild(title)
