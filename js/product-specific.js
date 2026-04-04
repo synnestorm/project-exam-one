@@ -28,20 +28,24 @@ async function fetchProduct() {
     const title = document.createElement("h1");
     title.className = "specific-title";
     title.textContent = product.title;
-    const rating = document.createElement("div")
-    rating.className = "specific-rating"
-    rating.textContent = ""
-    for (let i = 1; i <= 5; i++) {
+    function starRating(ratingValue = 0) {
+       const rating = document.createElement("div")
+      rating.className = "specific-rating"
+      for (let i = 1; i <= 5; i++) {
       const star = document.createElement("i")
-      if (product.rating >= i) {
+      if (ratingValue >= i) {
         star.className = "fas fa-star"
-      } else if (product.rating >= i - 0.5) {
+      } else if (ratingValue >= i - 0.5) {
         star.className = "fas fa-star-half-alt"
       } else {
         star.className = "far fa-star"
       }
       rating.appendChild(star)
     }
+    return rating
+    }
+    const productRating = starRating(product.rating || 0)
+   
     const price = document.createElement("span");
     price.className = "original-price";
     const discountPrice = document.createElement("span")
@@ -105,7 +109,7 @@ async function fetchProduct() {
     specificContent.className = "specific-content";
 
     specificContent.appendChild(title);
-    specificContent.appendChild(rating)
+    specificContent.appendChild(productRating)
     specificContent.appendChild(price);
     specificContent.appendChild(description);
     specificContent.appendChild(tags)
@@ -135,9 +139,11 @@ async function fetchProduct() {
         const user = document.createElement("p")
         user.textContent = review.username + " "
         const reviewText = document.createElement("p")
-        reviewText.textContent = review.description
+        reviewText.textContent = `"${review.description}"`
+        const userRating = starRating(review.rating ?? 0)
 
         userReview.appendChild(user)
+        userReview.appendChild(userRating)
         userReview.appendChild(reviewText)
         reviewsDiv.appendChild(userReview)
       })
