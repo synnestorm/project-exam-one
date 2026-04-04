@@ -180,6 +180,13 @@ img.image-collage {
   margin: 50px auto 30px auto;
 }
 
+@media only screen and (max-width: 800px) {
+  a.view-item {
+    font-size: 30px;
+  padding: 30px 60px 30px 60px;
+}
+}
+
 @media only screen and (max-width: 500px) {
   #carousel-slider {
     max-width: 500px;
