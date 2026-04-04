@@ -104,7 +104,8 @@ button {
 
 main.success {
     background-color: var(--card-color);
-  width: 600px;
+    width: 100%;
+  max-width: 600px;
   margin: 50px auto;
   padding: 30px;
 }

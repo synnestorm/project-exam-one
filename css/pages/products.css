@@ -57,7 +57,8 @@ h2 {
   gap: 40px;
   padding: 20px;
   margin-top: 50px;
-  width: 1000px;
+  width: 100%;
+  max-width: 1000px;
   height: 500px;
   align-items: center;
 }
@@ -139,6 +140,8 @@ h2 {
   flex-wrap: wrap;
   justify-content: space-around;
   margin-bottom: 30px;
+  width: 100%;
+  max-width: 1200px;
 }
 
 @media (max-width: 768px) {
@@ -151,5 +154,10 @@ h2 {
   .specific-image {
     max-width: 100%;
     height: auto;
+  }
+  #reviews {
+    justify-content: start;
+    max-width: 400px;
+    padding-left: 30px;
   }
 }
