@@ -25,6 +25,8 @@ function shoppingCart() {
         total += finalPrice * item.quantity;
         const displayProducts = document.createElement("div")
         displayProducts.className = "display-products"
+        const productInfo = document.createElement("div")
+        productInfo.className = "product-info"
         const image = document.createElement("img")
         image.className = "product-image"
         image.src = item.image
@@ -34,11 +36,9 @@ function shoppingCart() {
         title.textContent = item.title
         const price = document.createElement("span")
         price.className = "product-price"
-        if(item.discountedPrice) {
-            price.textContent = `${item.discountedPrice} NOK`
-        } else {
-            price.textContent = `${item.price} NOK`;
-        }
+        const itemPrice = item.discountedPrice ?? item.price
+        const itemTotal = itemPrice * item.quantity
+        price.textContent = `${itemTotal.toFixed(2)} NOK`
         const removeBtn = document.createElement("button")
         removeBtn.className = "remove-btn"
         removeBtn.textContent = "Remove product"
@@ -56,11 +56,10 @@ function shoppingCart() {
         const plus = document.createElement("button")
         plus.className = "quantity-btn"
         plus.textContent = "+"
-
+        
         quantityAdjuster.appendChild(minus)
         quantityAdjuster.appendChild(quantityNumber)
         quantityAdjuster.appendChild(plus)
-        displayProducts.appendChild(quantityAdjuster)
 
         const minQuantity = 1
         const maxQuantity = 10
@@ -83,8 +82,11 @@ function shoppingCart() {
 
         displayProducts.appendChild(image)
         displayProducts.appendChild(title)
+        displayProducts.appendChild(quantityAdjuster)
+        
         displayProducts.appendChild(price)
         displayProducts.appendChild(removeBtn)
+        displayProducts.appendChild(productInfo)
         containerCart.appendChild(displayProducts)
     })
     const totalPrice = document.createElement("div")
