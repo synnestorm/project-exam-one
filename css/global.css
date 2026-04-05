@@ -147,7 +147,7 @@ footer a {
     display: flex;
   }
   .menu li {
-    margin: 30px 0;
+    margin: 20px 0;
   }
   .menu a {
     font-size: 30px;
@@ -155,13 +155,17 @@ footer a {
   }
   .hamburger {
     display: block;
-    margin-top: 25px;
+    margin-top: 20px;
   }
   .hamburger-div {
     position: absolute;
     right: 15px;
     top: 15px;
     z-index: 1100;
+  }
+  footer {
+    height: auto;
+    padding-bottom: 20px;
   }
 }
 
