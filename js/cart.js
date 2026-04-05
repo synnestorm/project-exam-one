@@ -34,6 +34,8 @@ function shoppingCart() {
         const title = document.createElement("h2")
         title.className = "product-title"
         title.textContent = item.title
+        const priceDiv = document.createElement("div")
+        priceDiv.className = "price-div"
         const price = document.createElement("span")
         price.className = "product-price"
         const itemPrice = item.discountedPrice ?? item.price
@@ -80,19 +82,25 @@ function shoppingCart() {
             }
         })
 
-        displayProducts.appendChild(image)
-        displayProducts.appendChild(title)
-        displayProducts.appendChild(quantityAdjuster)
         
-        displayProducts.appendChild(price)
-        displayProducts.appendChild(removeBtn)
+        productInfo.appendChild(title)
+        productInfo.appendChild(quantityAdjuster)
+        productInfo.appendChild(removeBtn)
+
+        priceDiv.appendChild(price)
+
+        displayProducts.appendChild(image)
         displayProducts.appendChild(productInfo)
+        displayProducts.appendChild(priceDiv)
+        
         containerCart.appendChild(displayProducts)
     })
+    const summaryDiv = document.createElement("div")
+    summaryDiv.className = "summary-div"
     const totalPrice = document.createElement("div")
     totalPrice.className = "total-price"
     totalPrice.textContent = `Total price: ${total.toFixed(2)} NOK`
-    containerCart.appendChild(totalPrice)
+    summaryDiv.appendChild(totalPrice)
     const removeAllBtn = document.createElement("button")
     removeAllBtn.className = "remove-all"
     removeAllBtn.textContent = "Remove all products"
@@ -101,7 +109,8 @@ function shoppingCart() {
             clearCart()  
             } 
         })
-    containerCart.appendChild(removeAllBtn)
+    summaryDiv.appendChild(removeAllBtn)
+    containerCart.appendChild(summaryDiv)
     const continueBtn = document.createElement("button")
     continueBtn.className = "continue-btn"
     continueBtn.textContent = "Continue to checkout"
