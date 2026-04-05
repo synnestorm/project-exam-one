@@ -109,8 +109,7 @@ h2 {
     display: flex;
     justify-content: flex-end;
     width: 100%;
-    max-width: 960px;
-    margin: 20px auto;
+    margin: 1px auto;
     font-family: var(--font-one);
     font-weight: bold;
     font-size: 20px;
@@ -120,11 +119,18 @@ button.remove-all {
     display: block;
     margin: 10px 0 0 auto;
     max-width: 900px;
-    padding: 8px 16px;
     font-size: 16px;
     background-color: var(--bg-color);
     color: var(--button-one);
     cursor: pointer;
+}
+
+.summary-div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    max-width: 960px;
+    margin: 1px auto;
 }
 
 .continue-btn {
@@ -144,4 +150,34 @@ button {
     border: none;
     font-size: 20px;
   font-family: var(--font-one);
+}
+
+@media only screen and (max-width: 600px) {
+    .price-div {
+    margin-left: auto;
+}
+}
+
+@media only screen and (max-width: 435px) {
+    .display-products {
+        justify-content: center;
+        padding-top: 20px;
+    }
+    .product-info {
+        justify-content: center;
+        align-items: center;
+        gap: 1px;
+        margin-bottom: 20px;
+    }
+    .remove-btn {
+        margin: auto;
+    }
+    .quantity-adjuster {
+        position: relative;
+        bottom: 10px;
+    }
+    .quantity-btn,
+    .quantity-number {
+        font-size: 22px;
+    }
 }

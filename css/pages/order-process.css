@@ -12,6 +12,13 @@
     margin: 30px auto;
 }
 
+.product-image {
+    width: 100%;
+    max-width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
 fieldset {
     margin: 20px 0;
     padding: 20px;
@@ -112,34 +119,4 @@ h2.continue {
 h2 a {
     text-decoration: underline;
     margin-top: 20px;
-}
-
-@media only screen and (max-width: 600px) {
-    .price-div {
-    margin-left: auto;
-}
-}
-
-@media only screen and (max-width: 435px) {
-    .display-products {
-        justify-content: center;
-        padding-top: 20px;
-    }
-    .product-info {
-        justify-content: center;
-        align-items: center;
-        gap: 1px;
-        margin-bottom: 20px;
-    }
-    .remove-btn {
-        margin: auto;
-    }
-    .quantity-adjuster {
-        position: relative;
-        bottom: 10px;
-    }
-    .quantity-btn,
-    .quantity-number {
-        font-size: 22px;
-    }
 }
