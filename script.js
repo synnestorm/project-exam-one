@@ -1,9 +1,3 @@
-// hamburger menu
-
-  document.querySelector(".hamburger").addEventListener("click", function(e) {
-  e.preventDefault();
-  document.getElementById("myLinks").classList.toggle("active");
-});
 
 // fetching for product grid and showing 12 products that is "trending now", and carousel showing 3 products
 
