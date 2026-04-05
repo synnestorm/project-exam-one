@@ -41,10 +41,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         insideCart.appendChild(itemDisplay)
     })
+    const totalDiv = document.createElement("div")
+    totalDiv.className = "total-div"
     const totalPrice = document.createElement("span")
     totalPrice.className = "total-price"
     totalPrice.textContent = `Total: ${total.toFixed(2)} NOK`
-    insideCart.appendChild(totalPrice)
+    totalDiv.appendChild(totalPrice)
+    insideCart.appendChild(totalDiv)
     const purchaseBtn = document.querySelector(".complete-btn")
     purchaseBtn.addEventListener("click", (e) => {
         e.preventDefault()
