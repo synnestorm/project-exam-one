@@ -1,0 +1,147 @@
+.empty-cart {
+    font-size: 20px;
+    text-align: center;
+    margin: 100px 0 ;
+}
+
+.link {
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.display-products {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 980px;
+    min-height: 200px;
+    background-color: var(--card-color);
+    gap: 16px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    flex: 1;
+    min-width: 200px;
+    padding-bottom: 30px;
+}
+
+.product-image {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    flex-shrink: 0;
+    margin-right: 30px;
+    margin-left: 20px;
+}
+
+.product-title {
+    font-family: var(--font-one);
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.product-price {
+  font-family: var(--font-one);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.price-div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    min-width: 100px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+.quantity-adjuster {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+}
+
+.quantity-btn {
+    background-color: var(--card-color);
+    color: var(--text-color);
+    font-size: 17px;
+    width: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.quantity-number {
+    font-size: 17px;
+    font-family: var(--font-one);
+    text-align: center;
+}
+
+.remove-btn {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: var(--button-one);
+    background-color: var(--card-color);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    align-self: center;
+    font-size: 16px;
+    align-self: flex-start;
+}
+
+.total-price {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: 960px;
+    margin: 20px auto;
+    font-family: var(--font-one);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+button.remove-all {
+    display: block;
+    margin: 10px 0 0 auto;
+    max-width: 900px;
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: var(--bg-color);
+    color: var(--button-one);
+    cursor: pointer;
+}
+
+.continue-btn {
+    display: block;
+    margin: 15px auto 30px;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--bg-color);
+    background-color: var(--button-one);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+button {
+    border: none;
+    font-size: 20px;
+  font-family: var(--font-one);
+}
