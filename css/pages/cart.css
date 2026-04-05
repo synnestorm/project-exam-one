@@ -98,7 +98,6 @@ h2 {
     color: var(--button-one);
     background-color: var(--card-color);
     border: none;
-    cursor: pointer;
     border-radius: 5px;
     align-self: center;
     font-size: 16px;
@@ -122,7 +121,6 @@ button.remove-all {
     font-size: 16px;
     background-color: var(--bg-color);
     color: var(--button-one);
-    cursor: pointer;
 }
 
 .summary-div {
@@ -142,7 +140,6 @@ button.remove-all {
     color: var(--bg-color);
     background-color: var(--button-one);
     border: none;
-    cursor: pointer;
     text-align: center;
 }
 
@@ -150,6 +147,7 @@ button {
     border: none;
     font-size: 20px;
   font-family: var(--font-one);
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {
