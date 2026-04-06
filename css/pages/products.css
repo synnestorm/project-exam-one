@@ -102,6 +102,10 @@ h2 {
   font-family: var(--font-one);
 }
 
+.hidden {
+  display: none;
+}
+
 .add-cart {
   background-color: var(--button-one);
   color: var(--bg-color);

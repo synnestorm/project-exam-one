@@ -64,9 +64,17 @@ async function fetchProduct() {
     const tags = document.createElement("p")
     tags.textContent = `tags: ${product.tags.join(", ")}`
     const addCart = document.createElement("button");
-    addCart.className = "add-cart";
+    addCart.className = "add-cart hidden";
     addCart.textContent = "Add to cart";
+    let token = localStorage.getItem("authToken");
+    if (token) {
+    addCart.classList.remove("hidden");
+    }
     addCart.addEventListener("click", () => {
+      let token = localStorage.getItem("authToken");
+      if (!token) {
+      return;
+      }
       let cart = JSON.parse(localStorage.getItem("cart")) || []
       const existingProductIndex = cart.findIndex(item => item.id === product.id)
       if (existingProductIndex !== -1) {
