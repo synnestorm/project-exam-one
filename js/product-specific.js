@@ -73,8 +73,8 @@ async function fetchProduct() {
     addCart.addEventListener("click", () => {
       let token = localStorage.getItem("authToken");
       if (!token) {
-      return;
-      }
+     return;
+  }
       let cart = JSON.parse(localStorage.getItem("cart")) || []
       const existingProductIndex = cart.findIndex(item => item.id === product.id)
       if (existingProductIndex !== -1) {
