@@ -104,6 +104,11 @@ nav {
   display: none;
 }
 
+/* inputs/form */
+input:focus {
+    outline: 2px solid var(--button-one);
+}
+
 /* footer */
 footer {
   width: 100%;
