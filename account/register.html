@@ -45,18 +45,20 @@
     <main>
         <section id="register">
             <h1>Register here</h1>
-            <form>
+            <p id="result"></p>
+            <form id="registerForm">
                 <label for="email">E-mail:</label>
-                <input id="email" type="email" name="email" placeholder="olanordmann@mail.no" required>
+                <input id="email" type="email" name="email" placeholder="olanordmann@mail.no">
+                <p id="emailError" class="error"></p>
                 <label for="name">Create username:</label>
                 <input id="name" type="text" name="name" placeholder="Username" required>
+                <p id="nameError" class="error"></p>
                 <label for="password">Create password:</label>
                 <input id="password" type="password" name="password" placeholder="Password" required>
-                <label for="birthday">Birthday (Optional):</label>
-                <input id="birthday" type="date" name="birthday" placeholder="Birthday">
+                <p id="passwordError" class="error"></p>
                 <button type="submit">Create Account</button>
             </form>
-            <p>By creating an account, you can track your orders, save your details for faster checkout, and manage
+            <p class="register-info">By creating an account, you can track your orders, save your details for faster checkout, and manage
                 returns
                 easily.</p>
         </section>
@@ -74,6 +76,7 @@
 
     </footer>
 <script src="../js/header.js"></script>
+<script src="../js/user.js" defer></script>
 </body>
 
 </html>

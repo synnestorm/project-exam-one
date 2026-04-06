@@ -12,6 +12,7 @@
 
 h1 {
   padding-top: 30px;
+  margin-bottom: 30px;
 }
 
 input,
@@ -46,4 +47,31 @@ a.register {
 
 h2 {
   margin-top: 50px;
+}
+
+.error {
+  font-family: var(--font-one);
+  color: var(--button-one);
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  position: relative;
+  bottom: 10px;
+}
+
+#result {
+  font-family: var(--font-one);
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.ok {
+  color: var(--text-color);
+  padding: 10px;
+  border-radius: 6px;
+}
+
+p.register-info {
+  margin-top: 50px;
+  text-align: center;
+  padding: 0 100px;
 }
