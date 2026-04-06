@@ -63,8 +63,9 @@ registerForm.addEventListener("submit", function (event) {
   result.innerHTML = "";
 
   if (validateForm()) {
+    rememberUser()
     result.innerHTML = "Account created successfully! Redirecting...";
-    result.className = "ok";
+    result.className = "success";
 
     setTimeout(function () {
     window.location.href = "../account/login.html";
@@ -74,3 +75,13 @@ registerForm.addEventListener("submit", function (event) {
     result.className = "error";
   }
 });
+
+// function to remember the registered user
+function rememberUser() {
+let registeredUser = {
+    username: userName.value,
+    email: email.value,
+    password: password.value
+}
+    localStorage.setItem("registeredUser", JSON.stringify(registeredUser))
+}
