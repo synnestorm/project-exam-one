@@ -83,5 +83,11 @@ let registeredUser = {
     email: email.value,
     password: password.value
 }
-    localStorage.setItem("registeredUser", JSON.stringify(registeredUser))
+  localStorage.setItem("registeredUser", JSON.stringify(registeredUser))
+
+  let randomToken = function() {
+    return Math.random().toString(36).substring(2); 
+  }
+  let token = randomToken() + randomToken();
+  localStorage.setItem("authToken", token); 
 }

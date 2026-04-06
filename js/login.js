@@ -53,6 +53,12 @@ loginForm.addEventListener("submit", function (event) {
     result.innerHTML = "Login successful! Redirecting...";
     result.className = "success";
 
+    let randomToken = function() {
+    return Math.random().toString(36).substring(2); 
+    }
+    let token = randomToken() + randomToken();
+    localStorage.setItem("authToken", token); 
+
     setTimeout(function () {
     window.location.href = "../product/products.html";
   }, 3000);
