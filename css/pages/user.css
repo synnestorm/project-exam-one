@@ -75,3 +75,9 @@ p.register-info {
   text-align: center;
   padding: 0 100px;
 }
+
+@media only screen and (max-width: 650px) {
+  p.register-info {
+    padding: 0 30px;
+  }
+}
