@@ -1,0 +1,7 @@
+const registerForm = document.getElementById("registerForm")
+const userName = document.getElementById("name")
+const email = document.getElementById("email")
+const password = document.getElementById("password")
+const emailError = document.getElementById("emailError")
+const nameError = document.getElementById("nameError")
+const passwordError = document.getElementById("passwordError")
