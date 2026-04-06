@@ -44,11 +44,14 @@
     <main>
         <section id="login">
             <h1>Log in</h1>
-            <form>
-                <label for="name">Username:</label>
-                <input id="name" type="text" name="name" placeholder="Username" required>
+            <p id="result"></p>
+            <form id="loginForm">
+                <label for="email">Email:</label>
+                <input id="email" type="email" name="email" placeholder="olanordmann@email.com" required>
+                <p id="emailError" class="error"></p>
                 <label for="password">Password:</label>
                 <input id="password" type="password" name="password" placeholder="Password" required>
+                <p id="passwordError" class="error"></p>
                 <button type="submit">Continue</button>
             </form>
             <h2>Don't have an account?<br>
@@ -69,6 +72,7 @@
 
     </footer>
 <script src="../js/header.js"></script>
+<script src="../js/login.js"></script>
 </body>
 
 </html>
