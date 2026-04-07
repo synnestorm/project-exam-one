@@ -106,7 +106,10 @@ async function fetchProduct() {
       navigator.clipboard.writeText(url)
       .then (() => {
         // later fix: textContent appears underneath icon with the copied message
-        console.log("copied!")
+        const copied = document.createElement("p")
+        copied.className = "copied"
+        copied.textContent = "Copied!"
+        share.appendChild(copied)
         // also add setTimeOut for it to disappear after some time
       })
       .catch(err => {
