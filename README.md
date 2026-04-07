@@ -6,9 +6,9 @@ This is Eonline, an e-commerce application where you can buy pretty much everyth
 
 ### How to register/login
 
-** Email-address **: example@mail.com (has to be in email format or it wont work)
-** Username **: Example10 (has to have at least 5 characters)
-** Password **: Password10 (has to have at least 8 characters)
+- **Email-address**: `example@mail.com` (has to be in email format or it wont work)
+- **Username**: `Example10` (has to have at least 5 characters)
+- **Password**: `Password10` (has to have at least 8 characters)
 
 
 ## Brief
