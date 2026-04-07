@@ -1,5 +1,16 @@
 # Project Exam 1:
 
+## How it works
+
+This is Eonline, an e-commerce application where you can buy pretty much everything. To be able to "purchase" the products you have to register an account and log in. When you have logged in you will be able to add products to cart, go through checkout and finally get a confirmation on your order!
+
+### How to register/login
+
+** Email-address **: example@mail.com (has to be in email format or it wont work)
+** Username **: Example10 (has to have at least 5 characters)
+** Password **: Password10 (has to have at least 8 characters)
+
+
 ## Brief
 
 ### Description
