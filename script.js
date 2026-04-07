@@ -14,6 +14,14 @@ async function fetchProductGrid() {
     const data = await response.json();
     products = data.data;
     displayCarousel();
+    const carousel = document.querySelector("#carousel-slider")
+    carousel.addEventListener("mouseenter", () => {
+    isPaused = true
+})
+
+    carousel.addEventListener("mouseleave", () => {
+    isPaused = false
+})
     slideAutoPlay();
     showSlides(slideIndex);
     displayTrendingNow();
@@ -43,7 +51,9 @@ function displayCarousel() {
   });
 }
 
+
 let slideIndex = 1;
+let isPaused = false;
 function plusSlides(n) {
   showSlides((slideIndex += n));
 }
@@ -66,7 +76,9 @@ function showSlides(n) {
 }
 
 function slideAutoPlay() {
+  if (!isPaused) {
   plusSlides(1);
+  }
   setTimeout(slideAutoPlay, 8000);
 }
 
