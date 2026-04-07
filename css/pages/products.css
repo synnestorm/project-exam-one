@@ -151,10 +151,16 @@ h2 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin-bottom: 30px;
   width: 100%;
-  max-width: 1200px;
+}
+.review p {
+  overflow-wrap: anywhere;
+}
+.review {
+  width: 450px;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 768px) {
