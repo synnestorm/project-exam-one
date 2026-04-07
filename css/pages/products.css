@@ -134,8 +134,17 @@ h2 {
   cursor: pointer;
   font-size: 25px;
   position: relative;
-  bottom: 55px;
-  left: 200px;
+  bottom: 50px;
+  left: 220px;
+}
+
+.copied {
+  font-family: var(--font-one);
+  font-size: 1rem;
+  font-weight: 600;
+  position: absolute;
+  left: 30px;
+  bottom: 5px;
 }
 
 #reviews {
