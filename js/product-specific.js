@@ -63,12 +63,16 @@ async function fetchProduct() {
     // fix so that there is space after comma
     const tags = document.createElement("p")
     tags.textContent = `tags: ${product.tags.join(", ")}`
+    const loginPrompt = document.createElement("p")
+    loginPrompt.className = "login-prompt"
+    loginPrompt.innerHTML = `<a href="../account/login.html"><p class="login-prompt">Log in to shop!</p></a>`
     const addCart = document.createElement("button");
     addCart.className = "add-cart hidden";
     addCart.textContent = "Add to cart";
     let token = localStorage.getItem("authToken");
     if (token) {
     addCart.classList.remove("hidden");
+    loginPrompt.classList.add("hidden")
     }
     addCart.addEventListener("click", () => {
       let token = localStorage.getItem("authToken");
@@ -125,6 +129,7 @@ async function fetchProduct() {
     specificContent.appendChild(price);
     specificContent.appendChild(description);
     specificContent.appendChild(tags)
+    specificContent.appendChild(loginPrompt)
     specificContent.appendChild(addCart);
     specificContent.appendChild(share)
 

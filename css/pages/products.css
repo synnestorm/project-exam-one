@@ -135,7 +135,7 @@ h2 {
   font-size: 25px;
   position: relative;
   bottom: 50px;
-  left: 220px;
+  left: 230px;
 }
 
 .copied {
@@ -145,6 +145,10 @@ h2 {
   position: absolute;
   left: 30px;
   bottom: 5px;
+}
+
+.login-prompt {
+text-decoration: underline;
 }
 
 #reviews {
