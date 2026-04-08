@@ -43,6 +43,7 @@ button {
 
 a.register {
   text-decoration: underline;
+  color: var(--text-color);
 }
 
 h2 {
