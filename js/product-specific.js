@@ -5,7 +5,17 @@ const productCard = document.querySelector("#product-card");
 const reviews = document.querySelector("#reviews")
 const apiUrl = "https://v2.api.noroff.dev/online-shop";
 
+const loader = document.createElement("div")
+loader.className = "loader"
+loader.id = "loader"
+loader.style.display = "none"
+document.body.appendChild(loader)
+
 async function fetchProduct() {
+  const delivery = document.querySelector("#delivery")
+  delivery.style.display = "none"
+  loader.style.display = "flex"
+  await new Promise(r => setTimeout(r, 1000))
   try {
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
@@ -169,6 +179,9 @@ async function fetchProduct() {
   } catch (error) {
     console.error("Failed to fetch product", error);
     productCard.textContent = "Failed to load product. Please try again later.";
+  } finally {
+    loader.style.display = "none"
+    delivery.style.display = "inline"
   }
 }
 
