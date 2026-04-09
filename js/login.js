@@ -7,6 +7,12 @@ const passwordError = document.getElementById("passwordError")
 const result = document.getElementById("result")
 const loginUrl = "https://v2.api.noroff.dev/auth/login";
 
+const loader = document.createElement("div")
+loader.className = "loader"
+loader.id = "loader"
+loader.style.display = "none"
+document.body.appendChild(loader)
+
 function showError(el, message) {
   el.innerHTML = message;
 }
@@ -68,6 +74,8 @@ loginForm.addEventListener("submit", async function (event) {
 // async function to make API call for login user
 
 async function loginUser(email, password) {
+  loader.style.display = "flex"
+  await new Promise(r => setTimeout(r, 1000))
   try {
     const response = await fetch(loginUrl, {
       method: "POST",
@@ -93,5 +101,7 @@ async function loginUser(email, password) {
   } catch (error) {
     console.error("Failed to fetch authentication.", error)
     return false;
+  } finally {
+    loader.style.display = "none"
   }
 }

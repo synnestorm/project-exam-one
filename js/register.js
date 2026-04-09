@@ -1,3 +1,4 @@
+// variables fetched from DOM
 const registerForm = document.getElementById("registerForm")
 const userName = document.getElementById("name")
 const email = document.getElementById("email")
@@ -9,12 +10,19 @@ const result = document.getElementById("result")
 
 const registerUrl = "https://v2.api.noroff.dev/auth/register";
 
-// function to Display Error
+// loader
+const loader = document.createElement("div")
+loader.className = "loader"
+loader.id = "loader"
+loader.style.display = "none"
+document.body.appendChild(loader)
+
+// function to display Error
 function showError(el, message) {
   el.innerHTML = message;
 }
 
-// function to Clear Error
+// function to clear Error
 function clearError(el) {
   el.innerHTML = "";
 }
@@ -87,6 +95,8 @@ registerForm.addEventListener("submit", async function (event) {
 
 // async function to make API call for register user
 async function registerUser() {
+  loader.style.display = "flex"
+  await new Promise(r => setTimeout(r, 1000))
   try {
     const response = await fetch(registerUrl, {
       method: "POST",
@@ -112,5 +122,7 @@ async function registerUser() {
   } catch (error) {
     console.error("Failed to fetch authentication.", error)
     return false;
+  } finally {
+    loader.style.display = "none"
   }
 }
