@@ -80,12 +80,15 @@ async function loginUser(email, password) {
       })
     });
     if (!response.ok) {
+      /* This is for debugging:
+      const errorData = await response.json();
+      console.error("API error:", JSON.stringify(errorData, null, 2));
+      */
       return false;
-      // const errorData = await response.json();
-      // console.error("API error:", JSON.stringify(errorData, null, 2)); get response if fail
     }
     const data = await response.json();
-    localStorage.setItem("authToken", data.accessToken);
+    localStorage.setItem("authToken", data.data.accessToken);
+    // debugging: console.log("Login response:", data);
     return true;
   } catch (error) {
     console.error("Failed to fetch authentication.", error)

@@ -101,9 +101,11 @@ async function registerUser() {
       })
     });
     if (!response.ok) {
+     /* debugging:
+      const errorData = await response.json();
+      console.error("API error:", JSON.stringify(errorData, null, 2));
+    */
       return false;
-      // const errorData = await response.json();
-      // console.error("API error:", JSON.stringify(errorData, null, 2)); get response if fail
     }
     const data = await response.json();
     return true;
