@@ -4,7 +4,15 @@ const productList = document.querySelector("#product-list");
 const apiUrl = "https://v2.api.noroff.dev/online-shop";
 let products = [];
 
+const loader = document.createElement("div")
+loader.className = "loader"
+loader.id = "loader"
+loader.style.display = none
+document.body.appendChild(loader)
+
 async function fetchEveryProduct() {
+  loader.style.display = flex
+  await new Promise(r => setTimeout(r, 1000))
   try {
     const response = await fetch(apiUrl);
     if (!response.ok) {
