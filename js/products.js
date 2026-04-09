@@ -7,11 +7,11 @@ let products = [];
 const loader = document.createElement("div")
 loader.className = "loader"
 loader.id = "loader"
-loader.style.display = none
+loader.style.display = "none"
 document.body.appendChild(loader)
 
 async function fetchEveryProduct() {
-  loader.style.display = flex
+  loader.style.display = "flex"
   await new Promise(r => setTimeout(r, 1000))
   try {
     const response = await fetch(apiUrl);
@@ -41,6 +41,8 @@ async function fetchEveryProduct() {
     console.error("Failed to fetch products.", error);
     productList.textContent =
       "Could not fetch products. Please try again later.";
+  } finally {
+    loader.style.display = "none"
   }
 }
 
