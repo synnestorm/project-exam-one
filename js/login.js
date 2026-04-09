@@ -5,7 +5,7 @@ const emailError = document.getElementById("emailError")
 const nameError = document.getElementById("nameError")
 const passwordError = document.getElementById("passwordError")
 const result = document.getElementById("result")
-let user = JSON.parse(localStorage.getItem("registeredUser"))
+const loginUrl = "https://v2.api.noroff.dev/auth/login";
 
 function showError(el, message) {
   el.innerHTML = message;
@@ -43,21 +43,17 @@ function validateForm(enteredEmail, enteredPassword) {
   return okEmail && okPassword;
 }
 
-loginForm.addEventListener("submit", function (event) {
+loginForm.addEventListener("submit", async function (event) {
   event.preventDefault();
-  let enteredEmail = emailInput.value.trim()
-  let enteredPassword = password.value.trim()
   result.innerHTML = "";
+  const enteredEmail = emailInput.value.trim()
+  const enteredPassword = password.value.trim()
+  const success = await loginUser(enteredEmail, enteredPassword);
+  
 
-  if (validateForm(enteredEmail, enteredPassword)) {
+  if (success) {
     result.innerHTML = "Login successful! Redirecting...";
     result.className = "success";
-
-    let randomToken = function() {
-    return Math.random().toString(36).substring(2); 
-    }
-    let token = randomToken() + randomToken();
-    localStorage.setItem("authToken", token); 
 
     setTimeout(function () {
     window.location.href = "../product/products.html";
@@ -68,3 +64,31 @@ loginForm.addEventListener("submit", function (event) {
     result.className = "error";
   }
 });
+
+// async function to make API call for login user
+
+async function loginUser(email, password) {
+  try {
+    const response = await fetch(loginUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password
+      })
+    });
+    if (!response.ok) {
+      return false;
+      // const errorData = await response.json();
+      // console.error("API error:", JSON.stringify(errorData, null, 2)); get response if fail
+    }
+    const data = await response.json();
+    localStorage.setItem("authToken", data.accessToken);
+    return true;
+  } catch (error) {
+    console.error("Failed to fetch authentication.", error)
+    return false;
+  }
+}
