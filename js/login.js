@@ -63,7 +63,7 @@ loginForm.addEventListener("submit", async function (event) {
 
     setTimeout(function () {
     window.location.href = "../product/products.html";
-  }, 3000);
+  }, 1000);
 
   } else {
     result.innerHTML = "Invalid email or password.";

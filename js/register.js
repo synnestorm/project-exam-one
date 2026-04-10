@@ -81,7 +81,7 @@ registerForm.addEventListener("submit", async function (event) {
 
     setTimeout(function () {
     window.location.href = "../account/login.html";
-  }, 3000);
+  }, 1000);
     } else {
       result.innerHTML = "Registration failed. Please try again.";
       result.className = "error";
