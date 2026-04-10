@@ -116,7 +116,7 @@ async function fetchProduct() {
     const share = document.createElement("i")
     share.className = "fas fa-share"
     share.addEventListener("click", () => {
-      const url = `${window.location.origin}/product?productId=${product.id}`
+      const url = `${window.location.origin}/project-exam-one/product/index.html?productId=${product.id}`
       navigator.clipboard.writeText(url)
       .then (() => {
         const copied = document.createElement("p")
