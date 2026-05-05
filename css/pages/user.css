@@ -77,16 +77,44 @@ p.register-info {
   padding: 0 100px;
 }
 
-/* terms.html and privacy.html */
+/* terms.html and privacy.html, about.html */
 
 .privacy-container,
-.terms {
+.terms,
+.about {
   background-color: var(--card-color);
   width: 100%;
   max-width: 1000px;
   height: auto;
   margin: 50px auto;
   padding: 20px;
+}
+
+.about {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.about-info {
+  width: 100%;
+  max-width: 450px;
+  position: relative;
+  right: 100px;
+}
+.about-info p,
+h2 {
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 950px) {
+  .about-info {
+    position: static;
+  }
+  .about {
+    justify-content: center;
+  }
 }
 
 @media only screen and (max-width: 650px) {
