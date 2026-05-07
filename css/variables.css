@@ -1,4 +1,5 @@
 /* Variables */
+
 :root {
   /* Colors */
   --bg-color: #faf9f6;
@@ -16,12 +17,32 @@
   --font-one: "Figtree", Arial, sans-serif;
 
   /* Font sizes */
-  --h-size: 48px;
-  --h-size-two: 24px;
-  --p-size: 19px;
+  --font-size-one: 14px;
+  --font-size-two: 16px;
+  --font-size-three: 18px;
+  --font-size-four: 20px;
+  --font-size-five: 25px;
+  --font-size-six: 30px;
+  --font-size-seven: 35px;
 
-  /* Box Shadow */
-  /* Border and border radius */
+  /* Sizes for margins, paddings etc */
+  --size-one: 5px;
+  --size-two: 10px;
+  --size-three: 16px;
+  --size-four: 20px;
+  --size-five: 30px;
+  --size-six: 50px;
+  --size-seven: 100px;
+
+  /* Containers */
+  --container-one: 1000px;
+  --container-two: 550px;
+  --container-three: 450px;
+  --container-four: 980px;
+
+  /* Image sizes */
+  --image-one: 50px;
+  --image-two: 170px;
+  --image-three: 300px;
+  --image-four: 350px;
 }
-
-/* Set headings and such under this line */
