@@ -10,10 +10,10 @@
   --button-two: #3a929e;
 
   /* Fonts */
-  --heading-one: "Gravitas One";
-  --heading-two: "Playfair Display";
-  --paragraph-one: "DM Serif Text";
-  --font-one: "Figtree";
+  --heading-one: "Gravitas One", Georgia, serif;
+  --heading-two: "Playfair Display", Georgia, "Times New Roman", serif;
+  --paragraph-one: "DM Serif Text", Georgia, serif;
+  --font-one: "Figtree", Arial, sans-serif;
 
   /* Font sizes */
   --h-size: 48px;
