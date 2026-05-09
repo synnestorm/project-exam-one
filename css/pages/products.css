@@ -6,14 +6,13 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 50px;
-  margin-top: 40px;
-  margin-bottom: 50px;
+  margin: var(--size-six) 0;
 }
 
 .product-div {
   flex: 0 0 auto;
   box-sizing: border-box;
-  margin-bottom: 20px;
+  margin-bottom: var(--size-four);
 }
 
 .product-info {
@@ -36,7 +35,7 @@
 .product-price {
   font-family: var(--font-one);
   font-weight: bold;
-  font-size: 20px;
+  font-size: var(--font-size-four);
 }
 
 /* Specific-product page styling */
@@ -48,15 +47,15 @@
 }
 
 h2 {
-  margin: 20px 0;
+  margin: var(--size-four) 0;
 }
 
 .specific-product {
   background-color: var(--card-color);
   display: flex;
   gap: 40px;
-  padding: 20px;
-  margin-top: 50px;
+  padding: var(--size-four);
+  margin-top: var(--size-six);
   width: 100%;
   max-width: 1000px;
   height: 500px;
@@ -72,7 +71,7 @@ h2 {
 }
 
 .specific-title {
-  font-size: 30px;
+  font-size: var(--font-size-six);
   text-align: start;
 }
 
@@ -82,7 +81,7 @@ h2 {
 
 .original-price {
   display: block;
-  font-size: 40px;
+  font-size: var(--font-size-seven);
   font-family: var(--font-one);
   font-weight: bold;
 }
@@ -92,7 +91,7 @@ h2 {
 }
 
 .discounted-price {
-  font-size: 40px;
+  font-size: var(--font-size-seven);
   font-family: var(--font-one);
   font-weight: bold;
   color: var(--button-one);
@@ -113,9 +112,9 @@ h2 {
   width: 100%;
   max-width: 150px;
   font-family: var(--font-one);
-  padding: 10px;
+  padding: var(--size-two);
   cursor: pointer;
-  font-size: 20px;
+  font-size: var(--font-size-four);
 }
 
 .add-cart.active {
@@ -132,7 +131,7 @@ h2 {
 
 .fa-share {
   cursor: pointer;
-  font-size: 25px;
+  font-size: var(--font-size-five);
   position: relative;
   bottom: 50px;
   left: 230px;
@@ -156,15 +155,15 @@ text-decoration: underline;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin-bottom: 30px;
+  margin-bottom: var(--size-five);
   width: 100%;
 }
 .review p {
   overflow-wrap: anywhere;
 }
 .review {
-  width: 450px;
-  margin-bottom: 10px;
+  width: var(--container-three);
+  margin-bottom: var(--size-two);
 }
 
 @media (max-width: 768px) {

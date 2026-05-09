@@ -5,11 +5,11 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: var(--size-four);
     width: 100%;
     max-width: 600px;
     background-color: var(--card-color);
-    margin: 30px auto;
+    margin: var(--size-five) auto;
     align-items: stretch;
 }
 
@@ -46,7 +46,7 @@
 .total-price {
     font-family: var(--font-one);
     font-weight: bold;
-    font-size: 16px;
+    font-size: var(--font-size-two);
 }
 
 .total-div {
@@ -56,16 +56,16 @@
 }
 .product-image {
     display: inline;
-    max-width: 50px;
+    max-width: var(--image-one);
     height: 50px;
     object-fit: cover;
     flex-shrink: 0;
 }
 
 fieldset {
-    margin: 20px 0;
-    padding: 20px;
-     border: none;
+    margin: var(--size-four) 0;
+    padding: var(--size-four);
+    border: none;
 }
 
 .inputs-small {
@@ -88,19 +88,19 @@ label {
 
 label.choose {
     font-family: var(--heading-one);
-    font-size: 17px;
+    font-size: var(--font-size-three);
 }
 
 p {
     font-family: var(--font-one);
-    font-size: 16px;
+    font-size: var(--font-size-two);
 }
 
 .payment-card input[type="text"],
 .user-info input[type="text"] {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
+    margin-bottom: var(--size-three);
     border: none;
     border-radius: 4px;
     box-sizing: border-box;
@@ -108,25 +108,25 @@ p {
 
 input[type="radio"] {
     accent-color: var(--button-one); 
-    margin-right: 10px; 
+    margin-right: var(--size-two); 
 }
 
 legend,
 h2.shopping {
     font-family: var(--heading-one);
     text-decoration: none;
-    font-size: 20px;
+    font-size: var(--font-size-four);
     text-align: start;
 }
 
 h2.shopping {
-    margin-left: 22px;
+    margin-left: var(--size-four);
 }
 
 button {
-  font-size: 20px;
+  font-size: var(--font-size-four);
   font-family: var(--font-one);
-  padding: 10px 50px 10px 50px;
+  padding: var(--size-two) var(--size-six);
   background-color: var(--button-one);
   border: none;
   color: var(--bg-color);
@@ -141,8 +141,8 @@ main.success {
     background-color: var(--card-color);
     width: 100%;
   max-width: 600px;
-  margin: 50px auto;
-  padding: 30px;
+  margin: var(--size-six) auto;
+  padding: var(--size-five);
 }
 
 h2.order {
@@ -151,11 +151,11 @@ h2.order {
 
 h2.continue {
     text-align: start;
-    margin-top: 30px;
+    margin-top: var(--size-five);
     text-decoration: none;
 }
 
 h2 a {
     text-decoration: underline;
-    margin-top: 20px;
+    margin-top: var(--size-four);
 }

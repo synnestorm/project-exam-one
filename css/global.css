@@ -14,20 +14,19 @@ body {
 
 h1 {
   font-family: var(--heading-one);
-  font-size: var(--h-size);
+  font-size: 50px;
   font-weight: 400;
   text-align: center;
-  margin-top: 20px;
+  margin-top: var(--size-four);
 }
 
 h2 {
   font-family: var(--heading-two);
-  font-size: var(--h-size-two);
+  font-size: var(--font-size-six);
 }
 
 p {
   font-family: var(--paragraph-one);
-  font-size: var(--p-size);
 }
 
 .quotes {
@@ -36,14 +35,14 @@ p {
 
 img {
   width: 100%;
-  max-width: 350px;
+  max-width: var(--image-four);
 }
 
 header {
   position: sticky;
   top: 0;
   width: 100%;
-  padding-top: 20px;
+  padding-top: var(--size-four);
   background: linear-gradient(
     to bottom,
     var(--color-two) 0px,
@@ -68,7 +67,7 @@ header li {
 
 li {
   padding: 10px;
-  font-size: 20px;
+  font-size: var(--font-size-four);
   list-style: none;
 }
 
@@ -98,8 +97,8 @@ nav {
 
 .fa-solid {
   float: right;
-  font-size: 25px;
-  margin-right: 20px;
+  font-size: var(--font-size-five);
+  margin-right: var(--size-four);
   transition: 0.3s;
 }
 
@@ -189,15 +188,15 @@ footer a {
     display: flex;
   }
   .menu li {
-    margin: 20px 0;
+    margin: var(--size-four) 0;
   }
   .menu a {
-    font-size: 30px;
+    font-size: var(--font-size-six);
     font-family: var(--font-one);
   }
   .hamburger {
     display: block;
-    margin-top: 20px;
+    margin-top: var(--size-four);
   }
   .hamburger-div {
     position: absolute;
@@ -207,13 +206,13 @@ footer a {
   }
   footer {
     height: auto;
-    padding-bottom: 20px;
+    padding-bottom: var(--size-four);
   }
 }
 
 
 @media only screen and (max-width: 500px) {
   h1 {
-    font-size: 35px;
+    font-size: var(--font-size-seven);
   }
 }

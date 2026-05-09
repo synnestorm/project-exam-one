@@ -1,7 +1,7 @@
 .empty-cart {
-    font-size: 20px;
+    font-size: var(--font-size-four);
     text-align: center;
-    margin: 100px 0 ;
+    margin: var(--size-seven) 0 ;
 }
 
 .link {
@@ -9,7 +9,7 @@
 }
 
 h2 {
-    margin-bottom: 20px;
+    margin-bottom: var(--size-four);
     text-decoration: underline;
 }
 
@@ -24,7 +24,7 @@ h2 {
     min-height: 200px;
     background-color: var(--card-color);
     gap: 16px;
-    margin: 20px auto;
+    margin: var(--size-four) auto;
     position: relative;
 }
 
@@ -35,7 +35,7 @@ h2 {
     gap: 10px;
     flex: 1;
     min-width: 200px;
-    padding-bottom: 30px;
+    padding-bottom: var(--size-five);
 }
 
 .product-image {
@@ -43,20 +43,20 @@ h2 {
     height: 170px;
     object-fit: cover;
     flex-shrink: 0;
-    margin-right: 30px;
-    margin-left: 20px;
+    margin-right: var(--size-five);
+    margin-left: var(--size-four);
 }
 
 .product-title {
     font-family: var(--font-one);
     text-decoration: none;
-    font-size: 18px;
+    font-size: var(--font-size-three);
 }
 
 .product-price {
   font-family: var(--font-one);
   font-weight: bold;
-  font-size: 20px;
+  font-size: var(--font-size-four);
 }
 
 .price-div {
@@ -64,7 +64,7 @@ h2 {
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
-    min-width: 100px;
+    min-width: var(--size-seven);
     position: absolute;
     bottom: 15px;
     right: 15px;
@@ -79,14 +79,14 @@ h2 {
 .quantity-btn {
     background-color: var(--card-color);
     color: var(--text-color);
-    font-size: 17px;
-    width: 20px;
-  margin: 0;
-  padding: 0;
+    font-size: var(--font-size-three);
+    width: var(--size-four);
+    margin: 0;
+    padding: 0;
 }
 
 .quantity-number {
-    font-size: 17px;
+    font-size: var(--font-size-three);
     font-family: var(--font-one);
     text-align: center;
 }
@@ -100,7 +100,7 @@ h2 {
     border: none;
     border-radius: 5px;
     align-self: center;
-    font-size: 16px;
+    font-size: var(--font-size-two);
     align-self: flex-start;
 }
 
@@ -111,14 +111,14 @@ h2 {
     margin: 1px auto;
     font-family: var(--font-one);
     font-weight: bold;
-    font-size: 20px;
+    font-size: var(--font-size-four);
 }
 
 button.remove-all {
     display: block;
     margin: 10px 0 0 auto;
     max-width: 900px;
-    font-size: 16px;
+    font-size: var(--font-size-two);
     background-color: var(--bg-color);
     color: var(--button-one);
 }
@@ -133,9 +133,9 @@ button.remove-all {
 
 .continue-btn {
     display: block;
-    margin: 15px auto 30px;
+    margin: 15px auto var(--size-five);
     padding: 12px 20px;
-    font-size: 18px;
+    font-size: var(--font-size-three);
     font-weight: bold;
     color: var(--bg-color);
     background-color: var(--button-one);
@@ -145,9 +145,9 @@ button.remove-all {
 
 button {
     border: none;
-    font-size: 20px;
-  font-family: var(--font-one);
-  cursor: pointer;
+    font-size: var(--font-size-four);
+    font-family: var(--font-one);
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {
@@ -159,13 +159,13 @@ button {
 @media only screen and (max-width: 435px) {
     .display-products {
         justify-content: center;
-        padding-top: 20px;
+        padding-top: var(--size-four);
     }
     .product-info {
         justify-content: center;
         align-items: center;
         gap: 1px;
-        margin-bottom: 20px;
+        margin-bottom: var(--size-four);
     }
     .remove-btn {
         margin: auto;
@@ -176,6 +176,6 @@ button {
     }
     .quantity-btn,
     .quantity-number {
-        font-size: 22px;
+        font-size: var(--font-size-four);
     }
 }

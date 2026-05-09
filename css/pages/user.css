@@ -4,25 +4,25 @@
 .container {
   background-color: var(--card-color);
   width: 100%;
-  max-width: 1000px;
+  max-width: var(--container-one);
   height: 700px;
-  margin: 50px auto;
+  margin: var(--size-six) auto;
   text-align: center;
 }
 
 h1 {
-  padding-top: 30px;
-  margin-bottom: 30px;
+  padding-top: var(--size-five);
+  margin-bottom: var(--size-five);
 }
 
 input,
 textarea {
   display: block;
   width: 300px;
-  padding: 20px;
+  padding: var(--size-four);
   border: none;
   background-color: var(--bg-color);
-  margin: 20px auto;
+  margin: var(--size-four) auto;
 }
 
 label {
@@ -30,9 +30,9 @@ label {
 }
 
 button {
-  font-size: 20px;
+  font-size: var(--font-size-four);
   font-family: var(--font-one);
-  padding: 10px 50px 10px 50px;
+  padding: var(--size-two) var(--size-six);
   background-color: var(--button-one);
   border: none;
   color: var(--bg-color);
@@ -44,17 +44,18 @@ button {
 a.register {
   text-decoration: underline;
   color: var(--text-color);
+  font-family: var(--heading-two);
 }
 
 h2 {
-  margin-top: 50px;
+  margin-top: var(--size-six);
 }
 
 .error {
   font-family: var(--font-one);
   color: var(--button-one);
   font-size: 0.9rem;
-  margin-bottom: 10px;
+  margin-bottom: var(--size-two);
   position: relative;
   bottom: 10px;
 }
@@ -62,19 +63,19 @@ h2 {
 #result {
   font-family: var(--font-one);
   font-size: 1rem;
-  margin-top: 10px;
+  margin-top: var(--size-two);
 }
 
 .success {
   color: var(--text-color);
-  padding: 10px;
+  padding: var(--size-two);
   border-radius: 6px;
 }
 
 p.register-info {
-  margin-top: 50px;
+  margin-top: var(--size-six);
   text-align: center;
-  padding: 0 100px;
+  padding: 0 var(--size-seven);
 }
 
 /* terms.html and privacy.html, about.html */
@@ -84,10 +85,10 @@ p.register-info {
 .about {
   background-color: var(--card-color);
   width: 100%;
-  max-width: 1000px;
+  max-width: var(--container-one);
   height: auto;
-  margin: 50px auto;
-  padding: 20px;
+  margin: var(--size-six) auto;
+  padding: var(--size-four);
 }
 
 .about {
@@ -99,13 +100,13 @@ p.register-info {
 
 .about-info {
   width: 100%;
-  max-width: 450px;
+  max-width: var(--container-three);
   position: relative;
   right: 100px;
 }
 .about-info p,
-h2 {
-  margin-bottom: 20px;
+.about-info h2 {
+  margin-bottom: var(--size-four);
 }
 
 @media only screen and (max-width: 950px) {
@@ -119,6 +120,6 @@ h2 {
 
 @media only screen and (max-width: 650px) {
   p.register-info {
-    padding: 0 30px;
+    padding: 0 var(--size-five);
   }
 }
