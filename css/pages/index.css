@@ -39,6 +39,7 @@
 
 a.view-item {
   background-color: var(--button-one);
+  font-family: var(--heading-two);
   font-size: var(--font-size-seven);
   padding: 30px 70px;
   color: var(--bg-color);
