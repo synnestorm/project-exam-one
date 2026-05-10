@@ -3,10 +3,10 @@
 This is my submission for the Project Exam 1: A modern and responsive e-commerce web application. Eonline allows users to browse products, register and log in, add products to cart, complete checkout and recieve order confirmation.
 
 ## Live Demo
-- **Live Site**(https://synnestorm.github.io/project-exam-one/index.html)
-- **Github Repository**(https://github.com/synnestorm/project-exam-one)
-- **Github Project Board**(https://github.com/users/synnestorm/projects/9/views/1)
-- **Figma Design**(https://www.figma.com/design/KQBOnHrga5Heg55PrqcH5X/Project-Exam-1?node-id=0-1&p=f)
+- [**Live Site**](https://synnestorm.github.io/project-exam-one/index.html)
+- [**Github Repository**](https://github.com/synnestorm/project-exam-one)
+- [**Github Project Board**](https://github.com/users/synnestorm/projects/9/views/1)
+- [**Figma Design**](https://www.figma.com/design/KQBOnHrga5Heg55PrqcH5X/Project-Exam-1?node-id=0-1&p=f)
 
 ## Description
 
@@ -42,5 +42,5 @@ Open the project with Live Server or your preferred local development server.
 
 ## Author
 
-Created by **synnestorm**(https://github.com/synnestorm)
+Created by [**synnestorm**](https://github.com/synnestorm)
 
