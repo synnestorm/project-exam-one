@@ -16,6 +16,7 @@ All code included in this project was written entirely by me. AI tools were not 
 - Used ChatGPT to generate a text for about us section, and a contact us form.
 - Used Gemini to help understand how a carousel slide would work using this guide: https://www.w3schools.com/howto/howto_js_slideshow.asp 
 - Asked ChatGPT to understand how qantity adjuster in cart would work.
+- Used ChatGPT to debug finalPrice, discountedPrice and totalPrice. I could not figure out how to get the discounted price in my cart, only the set price.
 - Asked ChatGPT to understand how i could use my fontawesome icons to show in ratings for specific products.
 - Used ChatGPT to debug my share link code for specific product - could not get it to work when pasting it (was wrong file path).
 - Asked ChatGPT, after researching about mouseenter/mouseleave event, to help me understand how that could work on a carousel slideshow: https://stackoverflow.com/questions/15376808/how-to-pause-slideshow-when-hovering?rq=3
