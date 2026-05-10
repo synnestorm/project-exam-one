@@ -20,4 +20,4 @@ All code included in this project was written entirely by me. AI tools were not 
 - Used ChatGPT to debug my share link code for specific product - could not get it to work when pasting it (was wrong file path).
 - Asked ChatGPT, after researching about mouseenter/mouseleave event, to help me understand how that could work on a carousel slideshow: https://stackoverflow.com/questions/15376808/how-to-pause-slideshow-when-hovering?rq=3
 - Asked ChatGPT to help me understand how an API call for register/login would work, and how that is different from fetching products. Prior to this I had misunderstood the assignment, so I needed help to debug what I had done wrong and what I needed to do different.
-- Asked ChatGPT to help debug my hamburger menu, because I could not get it to work. Used this guide: 
+- Asked ChatGPT to help debug my hamburger menu, because I could not get it to work. Used this guide: https://www.w3schools.com/howto/howto_js_curtain_menu.asp
