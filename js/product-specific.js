@@ -2,20 +2,20 @@
 // by user
 
 const productCard = document.querySelector("#product-card");
-const reviews = document.querySelector("#reviews")
+const reviews = document.querySelector("#reviews");
 const apiUrl = "https://v2.api.noroff.dev/online-shop";
 
-const loader = document.createElement("div")
-loader.className = "loader"
-loader.id = "loader"
-loader.style.display = "none"
-document.body.appendChild(loader)
+const loader = document.createElement("div");
+loader.className = "loader";
+loader.id = "loader";
+loader.style.display = "none";
+document.body.appendChild(loader);
 
 async function fetchProduct() {
-  const delivery = document.querySelector("#delivery")
-  delivery.style.display = "none"
-  loader.style.display = "flex"
-  await new Promise(r => setTimeout(r, 1000))
+  const delivery = document.querySelector("#delivery");
+  delivery.style.display = "none";
+  loader.style.display = "flex";
+  await new Promise((r) => setTimeout(r, 1000));
   try {
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
@@ -39,110 +39,113 @@ async function fetchProduct() {
     title.className = "specific-title";
     title.textContent = product.title;
     function starRating(ratingValue = 0) {
-       const rating = document.createElement("div")
-      rating.className = "specific-rating"
+      const rating = document.createElement("div");
+      rating.className = "specific-rating";
       for (let i = 1; i <= 5; i++) {
-      const star = document.createElement("i")
-      if (ratingValue >= i) {
-        star.className = "fas fa-star"
-      } else if (ratingValue >= i - 0.5) {
-        star.className = "fas fa-star-half-alt"
-      } else {
-        star.className = "far fa-star"
+        const star = document.createElement("i");
+        if (ratingValue >= i) {
+          star.className = "fas fa-star";
+        } else if (ratingValue >= i - 0.5) {
+          star.className = "fas fa-star-half-alt";
+        } else {
+          star.className = "far fa-star";
+        }
+        rating.appendChild(star);
       }
-      rating.appendChild(star)
+      return rating;
     }
-    return rating
-    }
-    const productRating = starRating(product.rating || 0)
-   
+    const productRating = starRating(product.rating || 0);
+
     const price = document.createElement("span");
     price.className = "original-price";
-    const discountPrice = document.createElement("span")
-    discountPrice.className = "discounted-price"
+    const discountPrice = document.createElement("span");
+    discountPrice.className = "discounted-price";
     if (product.discountedPrice < product.price) {
       price.innerHTML = `
       <span class="original-price old-price">${product.price} NOK</span>
-      <span class="discounted-price">now ${product.discountedPrice}!</span>`
+      <span class="discounted-price">now ${product.discountedPrice}!</span>`;
     } else {
       price.textContent = `${product.price} NOK`;
     }
     const description = document.createElement("p");
     description.className = "specific-description";
     description.textContent = product.description;
-    // fix so that there is space after comma
-    const tags = document.createElement("p")
-    tags.className = "specific-tags"
-    tags.textContent = `tags: ${product.tags.join(", ")}`
-    const loginPrompt = document.createElement("p")
-    loginPrompt.className = "login-prompt"
-    loginPrompt.innerHTML = `<a href="../account/login.html"><p class="login-prompt">Log in to shop!</p></a>`
+
+    const tags = document.createElement("p");
+    tags.className = "specific-tags";
+    tags.textContent = `tags: ${product.tags.join(", ")}`;
+    const loginPrompt = document.createElement("p");
+    loginPrompt.className = "login-prompt";
+    loginPrompt.innerHTML = `<a href="../account/login.html"><p class="login-prompt">Log in to shop!</p></a>`;
     const addCart = document.createElement("button");
     addCart.className = "add-cart hidden";
     addCart.textContent = "Add to cart";
     let token = localStorage.getItem("authToken");
     if (token) {
-    addCart.classList.remove("hidden");
-    loginPrompt.classList.add("hidden")
+      addCart.classList.remove("hidden");
+      loginPrompt.classList.add("hidden");
     }
     addCart.addEventListener("click", () => {
       let token = localStorage.getItem("authToken");
       if (!token) {
-     return;
-  }
-      let cart = JSON.parse(localStorage.getItem("cart")) || []
-      const existingProductIndex = cart.findIndex(item => item.id === product.id)
+        return;
+      }
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existingProductIndex = cart.findIndex(
+        (item) => item.id === product.id,
+      );
       if (existingProductIndex !== -1) {
-        cart[existingProductIndex].quantity += 1
+        cart[existingProductIndex].quantity += 1;
       } else {
         cart.push({
-            id: product.id,
-            title: product.title,
-            price: product.price,
-            discountedPrice: product.discountedPrice,
-            image: product.image.url,
-            quantity: 1
-        })
+          id: product.id,
+          title: product.title,
+          price: product.price,
+          discountedPrice: product.discountedPrice,
+          image: product.image.url,
+          quantity: 1,
+        });
       }
-      localStorage.setItem("cart", JSON.stringify(cart))
-      addCart.classList.add("active")
-      addCart.textContent = "✔ Added!"
-      addCart.disabled = true
+      localStorage.setItem("cart", JSON.stringify(cart));
+      addCart.classList.add("active");
+      addCart.textContent = "✔ Added!";
+      addCart.disabled = true;
       setTimeout(() => {
-        addCart.classList.remove("active")
-        addCart.textContent = "Add to cart"
-        addCart.disabled = false
-      }, 3000)
-    })
-    const share = document.createElement("i")
-    share.className = "fas fa-share"
+        addCart.classList.remove("active");
+        addCart.textContent = "Add to cart";
+        addCart.disabled = false;
+      }, 3000);
+    });
+    const share = document.createElement("i");
+    share.className = "fas fa-share";
     share.addEventListener("click", () => {
-      const url = `${window.location.origin}/project-exam-one/product/index.html?id=${product.id}`
-      navigator.clipboard.writeText(url)
-      .then (() => {
-        const copied = document.createElement("p")
-        copied.className = "copied"
-        copied.textContent = "Copied!"
-        share.appendChild(copied)
-        setTimeout(() => {
-          copied.style.display = "none"
-        }, 2000)
-      })
-      .catch(err => {
-        console.error("Failed to copy!", err)
-      })
-    })
+      const url = `${window.location.origin}/project-exam-one/product/index.html?id=${product.id}`;
+      navigator.clipboard
+        .writeText(url)
+        .then(() => {
+          const copied = document.createElement("p");
+          copied.className = "copied";
+          copied.textContent = "Copied!";
+          share.appendChild(copied);
+          setTimeout(() => {
+            copied.style.display = "none";
+          }, 2000);
+        })
+        .catch((err) => {
+          console.error("Failed to copy!", err);
+        });
+    });
     const specificContent = document.createElement("div");
     specificContent.className = "specific-content";
 
     specificContent.appendChild(title);
-    specificContent.appendChild(productRating)
+    specificContent.appendChild(productRating);
     specificContent.appendChild(price);
     specificContent.appendChild(description);
-    specificContent.appendChild(tags)
-    specificContent.appendChild(loginPrompt)
+    specificContent.appendChild(tags);
+    specificContent.appendChild(loginPrompt);
     specificContent.appendChild(addCart);
-    specificContent.appendChild(share)
+    specificContent.appendChild(share);
 
     specificProduct.appendChild(image);
     specificProduct.appendChild(specificContent);
@@ -150,39 +153,38 @@ async function fetchProduct() {
 
     // reviews fetched outside the product card
 
-    const reviewsDiv = document.createElement("div")
-    reviewsDiv.className = "specific-reviews"
-    reviews.appendChild(reviewsDiv)
+    const reviewsDiv = document.createElement("div");
+    reviewsDiv.className = "specific-reviews";
+    reviews.appendChild(reviewsDiv);
     if (product.reviews.length === 0) {
       reviewsDiv.innerHTML = `
       <h2>Reviews:</h2>
-      <p>No reviews yet</p>`
+      <p>No reviews yet</p>`;
     } else {
-      const reviewHeader = document.createElement("h2")
-      reviewHeader.textContent = "Reviews:"
-      reviewsDiv.appendChild(reviewHeader)
-      product.reviews.forEach(review => {
-        const userReview = document.createElement("div")
-        userReview.className = "review"
-        const user = document.createElement("p")
-        user.textContent = review.username + " "
-        const reviewText = document.createElement("p")
-        reviewText.textContent = `"${review.description}"`
-        const userRating = starRating(review.rating ?? 0)
+      const reviewHeader = document.createElement("h2");
+      reviewHeader.textContent = "Reviews:";
+      reviewsDiv.appendChild(reviewHeader);
+      product.reviews.forEach((review) => {
+        const userReview = document.createElement("div");
+        userReview.className = "review";
+        const user = document.createElement("p");
+        user.textContent = review.username + " ";
+        const reviewText = document.createElement("p");
+        reviewText.textContent = `"${review.description}"`;
+        const userRating = starRating(review.rating ?? 0);
 
-        userReview.appendChild(user)
-        userReview.appendChild(userRating)
-        userReview.appendChild(reviewText)
-        reviewsDiv.appendChild(userReview)
-      })
+        userReview.appendChild(user);
+        userReview.appendChild(userRating);
+        userReview.appendChild(reviewText);
+        reviewsDiv.appendChild(userReview);
+      });
     }
-    
   } catch (error) {
     console.error("Failed to fetch product", error);
     productCard.textContent = "Failed to load product. Please try again later.";
   } finally {
-    loader.style.display = "none"
-    delivery.style.display = "inline"
+    loader.style.display = "none";
+    delivery.style.display = "inline";
   }
 }
 

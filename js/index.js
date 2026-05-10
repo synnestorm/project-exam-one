@@ -1,4 +1,3 @@
-
 // fetching for product grid and showing 12 products that is "trending now", and carousel showing 3 products
 
 const productGrid = document.querySelector("#product-grid");
@@ -14,14 +13,14 @@ async function fetchProductGrid() {
     const data = await response.json();
     products = data.data;
     displayCarousel();
-    const carousel = document.querySelector("#carousel-slider")
+    const carousel = document.querySelector("#carousel-slider");
     carousel.addEventListener("mouseenter", () => {
-    isPaused = true
-})
+      isPaused = true;
+    });
 
     carousel.addEventListener("mouseleave", () => {
-    isPaused = false
-})
+      isPaused = false;
+    });
     slideAutoPlay();
     showSlides(slideIndex);
     displayTrendingNow();
@@ -51,7 +50,6 @@ function displayCarousel() {
   });
 }
 
-
 let slideIndex = 1;
 let isPaused = false;
 function plusSlides(n) {
@@ -77,7 +75,7 @@ function showSlides(n) {
 
 function slideAutoPlay() {
   if (!isPaused) {
-  plusSlides(1);
+    plusSlides(1);
   }
   setTimeout(slideAutoPlay, 8000);
 }
