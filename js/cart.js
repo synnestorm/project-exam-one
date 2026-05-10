@@ -112,7 +112,7 @@ function shoppingCart() {
     summaryDiv.appendChild(removeAllBtn)
     containerCart.appendChild(summaryDiv)
     const continueBtn = document.createElement("button")
-    continueBtn.className = "continue-btn"
+    continueBtn.className = "continue-btn btn"
     continueBtn.textContent = "Continue to checkout"
     continueBtn.addEventListener("click", () => {
         window.location.href = "../checkout/index.html"

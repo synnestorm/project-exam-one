@@ -72,6 +72,7 @@ async function fetchProduct() {
     description.textContent = product.description;
     // fix so that there is space after comma
     const tags = document.createElement("p")
+    tags.className = "specific-tags"
     tags.textContent = `tags: ${product.tags.join(", ")}`
     const loginPrompt = document.createElement("p")
     loginPrompt.className = "login-prompt"

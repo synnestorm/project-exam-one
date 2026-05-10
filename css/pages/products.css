@@ -1,4 +1,8 @@
-/* Styling for product grid, */
+/* Styling for products.html */
+
+body {
+  font-family: var(--font-one);
+}
 
 #product-list {
   display: flex;
@@ -15,12 +19,6 @@
   margin-bottom: var(--size-four);
 }
 
-.product-info {
-  background-color: var(--card-color);
-  width: 350px;
-  padding: 10px 0 20px 10px;
-}
-
 .product-image {
   width: 100%;
   height: 300px;
@@ -28,12 +26,7 @@
   display: block;
 }
 
-.product-title {
-  font-family: var(--font-one);
-}
-
 .product-price {
-  font-family: var(--font-one);
   font-weight: bold;
   font-size: var(--font-size-four);
 }
@@ -57,8 +50,8 @@ h2 {
   padding: var(--size-four);
   margin-top: var(--size-six);
   width: 100%;
-  max-width: 1000px;
-  height: 500px;
+  max-width: var(--container-one);
+  height: auto;
   align-items: center;
 }
 
@@ -82,7 +75,6 @@ h2 {
 .original-price {
   display: block;
   font-size: var(--font-size-seven);
-  font-family: var(--font-one);
   font-weight: bold;
 }
 
@@ -92,13 +84,12 @@ h2 {
 
 .discounted-price {
   font-size: var(--font-size-seven);
-  font-family: var(--font-one);
   font-weight: bold;
   color: var(--button-one);
 }
 
-.specific-description {
-  font-family: var(--font-one);
+.specific-tags {
+  font-family: var(--paragraph-one);
 }
 
 .hidden {
@@ -111,7 +102,6 @@ h2 {
   border: none;
   width: 100%;
   max-width: 150px;
-  font-family: var(--font-one);
   padding: var(--size-two);
   cursor: pointer;
   font-size: var(--font-size-four);
@@ -138,7 +128,6 @@ h2 {
 }
 
 .copied {
-  font-family: var(--font-one);
   font-size: 1rem;
   font-weight: 600;
   position: absolute;
@@ -156,6 +145,7 @@ text-decoration: underline;
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin-bottom: var(--size-five);
+  font-family: var(--paragraph-one);
   width: 100%;
 }
 .review p {
@@ -179,7 +169,7 @@ text-decoration: underline;
   }
   #reviews {
     justify-content: start;
-    max-width: 400px;
-    padding-left: 30px;
+    max-width: var(--container-three);
+    padding-left: var(--size-five);
   }
 }

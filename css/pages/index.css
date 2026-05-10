@@ -100,12 +100,6 @@ h1 {
   margin-bottom: var(--size-four);
 }
 
-.trending-info {
-  background-color: var(--card-color);
-  width: 350px;
-  padding: 10px 0 20px 10px; /* <--- should this be variable? */
-}
-
 .trending-image {
   width: 100%;
   height: 300px;
@@ -126,8 +120,9 @@ h1 {
 section.account {
   background-color: var(--button-one);
   color: var(--bg-color);
-  height: 400px;
+  height: auto;
   margin: var(--size-six) 0;
+  padding: var(--size-seven) 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -137,6 +132,7 @@ section.account {
 
 p.text-account {
   font-size: var(--font-size-six);
+  margin-bottom: var(--size-four);
   width: 700px;
   font-family: var(--heading-two);
 }
@@ -184,6 +180,10 @@ img.image-collage {
   font-size: var(--font-size-six);
   padding: 30px 60px;
 }
+section.account,
+section.choose-us {
+    padding: var(--size-five);
+  }
 }
 
 @media only screen and (max-width: 510px) {
@@ -213,7 +213,6 @@ img.image-collage {
   section.account,
   section.choose-us {
     height: auto;
-    padding: var(--size-five);
     gap: 50px;
   }
 }

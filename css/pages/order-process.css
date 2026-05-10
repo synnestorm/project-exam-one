@@ -1,15 +1,22 @@
 
 /* checkout.html styling */
 
+body {
+    font-family: var(--font-one);
+}
+
+.card {
+    background-color: var(--card-color);
+    width: 100%;
+    max-width: 600px;
+    margin: var(--size-five) auto;
+    padding: var(--size-four);
+}
+
 .checkout-container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    padding: var(--size-four);
-    width: 100%;
-    max-width: 600px;
-    background-color: var(--card-color);
-    margin: var(--size-five) auto;
     align-items: stretch;
 }
 
@@ -39,12 +46,10 @@
     flex: 1;
     text-align: right;
     min-width: 60px;
-    font-family: var(--font-one);
     font-weight: bold;
 }
 
 .total-price {
-    font-family: var(--font-one);
     font-weight: bold;
     font-size: var(--font-size-two);
 }
@@ -83,7 +88,6 @@ label {
     display: block;
     margin-bottom: 5px;
     font-weight: 500;
-    font-family: var(--font-one);
 }
 
 label.choose {
@@ -92,7 +96,6 @@ label.choose {
 }
 
 p {
-    font-family: var(--font-one);
     font-size: var(--font-size-two);
 }
 
@@ -123,27 +126,7 @@ h2.shopping {
     margin-left: var(--size-four);
 }
 
-button {
-  font-size: var(--font-size-four);
-  font-family: var(--font-one);
-  padding: var(--size-two) var(--size-six);
-  background-color: var(--button-one);
-  border: none;
-  color: var(--bg-color);
-  display: block;
-  margin: auto;
-  cursor: pointer;
-}
-
 /* styling for success/index.html */
-
-main.success {
-    background-color: var(--card-color);
-    width: 100%;
-  max-width: 600px;
-  margin: var(--size-six) auto;
-  padding: var(--size-five);
-}
 
 h2.order {
     text-decoration: none;
@@ -158,4 +141,5 @@ h2.continue {
 h2 a {
     text-decoration: underline;
     margin-top: var(--size-four);
+    font-family: var(--heading-two);
 }

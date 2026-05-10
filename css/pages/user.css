@@ -1,12 +1,16 @@
-/* Stylesheet for login.html and register.html */
+/* Stylesheet for login.html and register.html, terms.html, privacy.html and about.html */
+
 #login,
 #register,
-.container {
+.container,
+.privacy-container,
+.terms {
   background-color: var(--card-color);
   width: 100%;
   max-width: var(--container-one);
-  height: 700px;
-  margin: var(--size-six) auto;
+  height: auto;
+  margin: var(--size-seven) auto;
+  padding: var(--size-four);
   text-align: center;
 }
 
@@ -27,18 +31,6 @@ textarea {
 
 label {
   display: none;
-}
-
-button {
-  font-size: var(--font-size-four);
-  font-family: var(--font-one);
-  padding: var(--size-two) var(--size-six);
-  background-color: var(--button-one);
-  border: none;
-  color: var(--bg-color);
-  display: block;
-  margin: auto;
-  cursor: pointer;
 }
 
 a.register {
@@ -76,19 +68,6 @@ p.register-info {
   margin-top: var(--size-six);
   text-align: center;
   padding: 0 var(--size-seven);
-}
-
-/* terms.html and privacy.html, about.html */
-
-.privacy-container,
-.terms,
-.about {
-  background-color: var(--card-color);
-  width: 100%;
-  max-width: var(--container-one);
-  height: auto;
-  margin: var(--size-six) auto;
-  padding: var(--size-four);
 }
 
 .about {

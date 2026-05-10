@@ -102,7 +102,7 @@ function displayTrendingNow() {
     image.src = product.image.url;
     image.alt = product.title;
     const trendingInfo = document.createElement("div");
-    trendingInfo.className = "trending-info";
+    trendingInfo.className = "trending-info small-card";
     const title = document.createElement("p");
     title.className = "trending-title";
     title.textContent = `${product.title}`;

@@ -1,15 +1,16 @@
 /* Styling for global styling: header and footer, buttons, forms etc */
 
 * {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
   margin: 0;
   padding: 0;
-  max-width: 1920px;
-  box-sizing: border-box;
 }
 
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
+  max-width: 1920px;
 }
 
 h1 {
@@ -23,10 +24,6 @@ h1 {
 h2 {
   font-family: var(--heading-two);
   font-size: var(--font-size-six);
-}
-
-p {
-  font-family: var(--paragraph-one);
 }
 
 .quotes {
@@ -110,9 +107,29 @@ nav {
   display: none;
 }
 
-/* inputs/form */
+/* styling for small cards */
+
+.small-card {
+  background-color: var(--card-color);
+  width: 350px;
+  padding: 10px 0 20px 10px;
+}
+
+/* inputs/form + button */
 input:focus {
     outline: 2px solid var(--button-one);
+}
+
+.btn {
+  font-size: var(--font-size-four);
+  font-family: var(--font-one);
+  padding: var(--size-two) var(--size-six);
+  background-color: var(--button-one);
+  border: none;
+  color: var(--bg-color);
+  display: block;
+  margin: auto;
+  cursor: pointer;
 }
 
 /* styling for loaders */
@@ -166,7 +183,7 @@ footer a {
   width: 250px;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 820px) {
 
   .menu {
     display: none;

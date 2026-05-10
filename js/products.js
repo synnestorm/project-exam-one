@@ -65,7 +65,7 @@ function displayAllProducts() {
     image.src = product.image.url;
     image.alt = product.title;
     const productInfo = document.createElement("div");
-    productInfo.className = "product-info";
+    productInfo.className = "product-info small-card";
     const title = document.createElement("p");
     title.className = "product-title";
     title.textContent = `${product.title}`;

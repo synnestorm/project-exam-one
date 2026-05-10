@@ -8,6 +8,10 @@
     text-align: center;
 }
 
+.link a {
+    font-family: var(--paragrah-one);
+}
+
 h2 {
     margin-bottom: var(--size-four);
     text-decoration: underline;
@@ -132,21 +136,11 @@ button.remove-all {
 }
 
 .continue-btn {
-    display: block;
     margin: 15px auto var(--size-five);
-    padding: 12px 20px;
-    font-size: var(--font-size-three);
-    font-weight: bold;
-    color: var(--bg-color);
-    background-color: var(--button-one);
-    border: none;
-    text-align: center;
 }
 
 button {
     border: none;
-    font-size: var(--font-size-four);
-    font-family: var(--font-one);
     cursor: pointer;
 }
 
